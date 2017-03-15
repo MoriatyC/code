@@ -7,12 +7,11 @@ cur = conn.cursor()
 def insert(string):
     try:
         cur.execute(string)
-        print '插入成功'
+        print 20 * '*', '插入成功', '*' * 20
+        conn.commit()
     except Exception, e:
         print e
-    finally:
         cur.close()
-        conn.commit()
         conn.close()
 
 
