@@ -46,11 +46,10 @@ def extract(path):
                 print 'ret_note search failed'
             keys.extend(values)
             template = tuple(keys)
-            string = "insert into patient_information " \
-                     "(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)values" \
-                     "('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'," \
-                     "'%s','%s','%s','%s','%s')" % template
+            string = ''.join(["insert into patient_information (",
+                             "%s," * 18, "%s)values(", "'%s'," * 18, "'%s')"]) % template
             db.insert(string)
+            # print string
     except pywintypes.com_error:
         pass
     finally:
