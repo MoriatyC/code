@@ -1,0 +1,19 @@
+public class Solution {
+    public String complexNumberMultiply(String a, String b) {
+        String[] subA = a.split("\\+");
+		String[] subB = b.split("\\+");
+		String rA = subA[0];
+		String rB = subB[0];
+		String cA = subA[1].split("i")[0];
+		String cB = subB[1].split("i")[0];
+		int sum1 = 0,sum2 = 0, sum3 = 0, sum4 = 0;
+		sum1 = Integer.valueOf(rA) * Integer.valueOf(rB);
+		sum2 = Integer.valueOf(rA) * Integer.valueOf(cB);
+		sum3 = Integer.valueOf(cA) * Integer.valueOf(rB);
+		sum4 = Integer.valueOf(cA) * Integer.valueOf(cB);
+		sum1 += -sum4;
+		sum2 += sum3;
+		String ret = "" + sum1 + "+" + sum2 + "i";
+		return ret;
+    }
+}
