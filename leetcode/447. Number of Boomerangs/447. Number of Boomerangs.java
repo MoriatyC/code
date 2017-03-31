@@ -16,18 +16,7 @@ public class Solution {
             }
             for(int value: map.values())
             {
-                if(value > 1)
-                {
-                    if(value == 2)
-                    {
-                        ret +=2;
-                    }
-                    else
-                    {
-                        ret += value * (value - 1);
-                    }
-                    
-                }
+                    ret += value * (value - 1);
             }
             map.clear();
           
