@@ -18,6 +18,7 @@ public class Main {
 		{
 			page = Integer.valueOf(matcher.group(1));
 			list = MyCrawler.extract(result);
+			//待加入存储
 		}
 		else
 		{
@@ -45,6 +46,7 @@ public class Main {
 			url = "http://gs.dlut.edu.cn/index/zytz/" + page + ".htm";
 			result = MyCrawler.getPage(url);
 			list = MyCrawler.extract(result);
+			//存储
 			for(Model m: list)
 			{
 				System.out.println(m.text);

@@ -51,7 +51,7 @@ public class MyCrawler {
         Matcher matcherText;
         List<Model> list = new ArrayList<>();
         String text = "";
-        while(matcherTitle.find() && matcherURL.find())
+        while(matcherTitle.find() && matcherURL.find())//寻找当前页的新闻
         {
         	Model temp = new Model();
         	temp.title = matcherTitle.group(1);
@@ -70,7 +70,6 @@ public class MyCrawler {
         	}
         	temp.text = temp.text.replaceAll("&nbsp;|&nbsp", " ");
         	list.add(temp);
-        	System.out.println(temp);
         }
         if(list.size() == 0)       
         {
