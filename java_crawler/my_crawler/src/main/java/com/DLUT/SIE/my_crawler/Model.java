@@ -7,11 +7,11 @@ public class Model
 {
 	String title;
 	String webUrl;
-	List<String> text;
+	String text;
 	public Model(){
 		title = "";
 		webUrl = "";
-		List<String> text = new ArrayList<>();
+	    text = "";
 	}
     public String toString(){
     	return "title:" + title + "\n" + "URL:" + webUrl + "\n" + "新闻内容:" + text; 

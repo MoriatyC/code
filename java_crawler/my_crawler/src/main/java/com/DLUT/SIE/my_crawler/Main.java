@@ -47,7 +47,7 @@ public class Main {
 			list = MyCrawler.extract(result);
 			for(Model m: list)
 			{
-				System.out.println(m);
+				System.out.println(m.text);
 			}
 		}
 		

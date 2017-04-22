@@ -47,13 +47,30 @@ public class MyCrawler {
         Matcher matcherTitle = patTitle.matcher(result);
         Pattern patURL = Pattern.compile("href=\"(.+?)\"\\s+?title=\"");
         Matcher matcherURL = patURL.matcher(result);
+        Pattern patText = Pattern.compile("vsb_content[\\s\\S]+?</div>");
+        Matcher matcherText;
         List<Model> list = new ArrayList<>();
+        String text = "";
         while(matcherTitle.find() && matcherURL.find())
         {
         	Model temp = new Model();
         	temp.title = matcherTitle.group(1);
-        	temp.webUrl = matcherURL.group(1);
+        	temp.webUrl = "http://gs.dlut.edu.cn/" + matcherURL.group(1).substring(3);
+//        	System.out.println(temp.webUrl);
+        	text = getPage(temp.webUrl);
+        	matcherText = patText.matcher(text);
+        	if(matcherText.find())
+        	{
+        		Pattern pat = Pattern.compile(">(.*?)<");
+        		Matcher mat = pat.matcher(matcherText.group());
+        		while(mat.find())
+        		{
+        			temp.text += mat.group(1);
+        		}
+        	}
+        	temp.text = temp.text.replaceAll("&nbsp;|&nbsp", " ");
         	list.add(temp);
+        	System.out.println(temp);
         }
         if(list.size() == 0)       
         {
