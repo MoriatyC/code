@@ -14,11 +14,16 @@ public class Main {
 		Pattern pat = Pattern.compile("1/(\\d+)");
 		Matcher matcher = pat.matcher(result);
 		int page = 0;
+		boolean isFirst = true;
 		if(matcher.find())
 		{
 			page = Integer.valueOf(matcher.group(1));
 			list = MyCrawler.extract(result);
-			//待加入存储
+			isFirst = false;
+			for(Model model: list)
+			{
+				Util.writeFile(model.writeString(), "E:\\temp\\content.txt", true);
+			}
 		}
 		else
 		{
@@ -41,15 +46,16 @@ public class Main {
 //			endTime = System.currentTimeMillis();
 //			System.out.println("程序运行时间：" + 1.0*(endTime - startTime)/i + "ms");
 //		}
-		while(--page > 0)
+		while(--page > 140)
 		{
 			url = "http://gs.dlut.edu.cn/index/zytz/" + page + ".htm";
+			System.out.println(url);
 			result = MyCrawler.getPage(url);
 			list = MyCrawler.extract(result);
-			//存储
-			for(Model m: list)
+//			//存储
+			for(Model model: list)
 			{
-				System.out.println(m.text);
+				Util.writeFile(model.writeString(), "E:\\temp\\content.txt", true);
 			}
 		}
 		

@@ -55,8 +55,8 @@ public class MyCrawler {
         {
         	Model temp = new Model();
         	temp.title = matcherTitle.group(1);
-        	temp.webUrl = "http://gs.dlut.edu.cn/" + matcherURL.group(1).substring(3);
-//        	System.out.println(temp.webUrl);
+        	temp.webUrl = "http://gs.dlut.edu.cn/" + matcherURL.group(1).substring(matcherURL.group(1).indexOf("info"));
+        	System.out.println(temp.webUrl);
         	text = getPage(temp.webUrl);
         	matcherText = patText.matcher(text);
         	if(matcherText.find())
