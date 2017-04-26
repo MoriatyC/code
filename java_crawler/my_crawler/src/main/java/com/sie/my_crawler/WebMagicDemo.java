@@ -1,8 +1,11 @@
 package com.sie.my_crawler;
 
+import javax.management.JMException;
+
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.monitor.SpiderMonitor;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 public class WebMagicDemo implements PageProcessor {
@@ -33,12 +36,20 @@ public class WebMagicDemo implements PageProcessor {
     }
     public static void main(String[] args) {
 //        BasicConfigurator.configure();
-        Spider.create(new WebMagicDemo())
+        Spider spider = Spider.create(new WebMagicDemo())
         //从“https://github.com/code4craft”开始爬
             .addUrl("https://github.com/code4craft")
             //开启5个线程抓取
-            .thread(5)
+            .thread(5);
             //启动
-            .run();
+//            .run();
+        try {
+            //添加单例，注册监控（可以注册多个到SpiderMonitor）
+            SpiderMonitor.instance().register(spider);
+        } catch (JMException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        spider.start();
     }
 }
