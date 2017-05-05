@@ -1,1 +1,0 @@
-This repo contains my daily practice.
