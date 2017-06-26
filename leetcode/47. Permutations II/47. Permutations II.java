@@ -7,7 +7,7 @@ public class Solution {
     }
     void backstrack(List<List<Integer>> ret, List<Integer> list, boolean[] used, int[] nums) {
         if (list.size() == nums.length) {
-            ret.add(new ArrayList(list));
+            ret.add(new ArrayList<>(list));
         } else {
             for (int i = 0; i < nums.length; i++) {
                 if (used[i] || (i != 0 && !used[i - 1] && nums[i] == nums[i - 1])) {

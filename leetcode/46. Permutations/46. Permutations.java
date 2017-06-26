@@ -12,7 +12,7 @@ public class Solution {
     }
     void back(List<List<Integer>> ret, List<Integer> list, List<Integer> cur) {
         if (list.size() == 0) {
-            ret.add(new ArrayList(cur));
+            ret.add(new ArrayList<>(cur));
             return;
         }
         for (int i = 0; i < list.size(); i++) {
