@@ -1,0 +1,23 @@
+public class Solution {
+    public int findLongestChain(int[][] pairs) {
+       Arrays.sort(pairs, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                
+                return o1[0] - o2[0];
+            }
+        });
+        int[] dp = new int[pairs.length];//以i为终点的pair的最长lis
+        for (int i = 0; i < pairs.length; i++) {
+            dp[i] = 1;
+            int maxCur = 0;
+            for (int j = 0; j < i; j++) {
+                if (pairs[j][1] < pairs[i][0] && dp[j] > maxCur) {
+                    maxCur = dp[j];
+                }
+            }
+            dp[i] = maxCur + 1;
+        }
+        return dp[pairs.length - 1];
+    }
+}
