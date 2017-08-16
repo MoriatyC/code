@@ -30,19 +30,11 @@
 			</div>
 			<div class="form-group">
 				<label for="name" class="col-sm-2 control-label"> 项目申请人 : </label>
-				<div class="col-sm-10">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button"
-							id="selectPerson" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false" th:field="*{p}">
-							请选择申请人 <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							<li th:each="person:${persons}">
-							     <a class="personItem" href="#" th:text="${person.name}" ></a>
-							</li>												
-						</ul>
-					</div>
+				<div class="col-sm-10" >
+					<select th:field="*{person}" >
+						<option th:each="person:${persons}" th:value="${person.id}"
+							th:text="${person.name}">Wireframe</option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
@@ -54,21 +46,12 @@
 			</div>
 			<div class="form-group">
 				<label for="path" class="col-sm-2 control-label"> 项目专题 : </label>
+
 				<div class="col-sm-10">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button"
-							id="selectSubject" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false" th:field="*{subject}">
-							请选择想申请的专题 <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li th:each="subject:${subjects}">
-                                 <a class="subjectItem" href="#" th:text="${subject.subjectName}" ></a>
-                            </li>
-                            
-                            
-                        </ul>
-					</div>
+					<select th:field="*{subject}">
+						<option th:each="subject:${subjects}" th:value="${subject.id}"
+							th:text="${subject.subjectName}">Wireframe</option>
+					</select>
 				</div>
 			</div>
 
@@ -92,12 +75,13 @@
 			<div class=" center-block" style="text-align: center">
 				<button type="submit" class="  btn btn-primary btn-lg">添加</button>
 				<button type="reset" class="  btn btn-warning btn-lg">重置</button>
-				<button type="button" class="  btn btn-danger btn-lg">删除</button>
+				<button id="delete-project-btn" type="button" class="  btn btn-danger btn-lg">删除</button>
 				<button type="button" class="  btn btn-info btn-lg">返回</button>
 			</div>
 
 		</form>
 	</div>
+	
 	<div th:if="${not #lists.isEmpty(projects)}">
 		<div class="panel panel-primary">
 			<div class="panel-heading">

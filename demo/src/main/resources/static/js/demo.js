@@ -18,7 +18,6 @@ $('#judege').on('click', function() {
 			id : cur
 		},
 		success : function(data) {
-			alert("123");
 			if (data == "OK") {
 				$("#" + cur).children("#state").text("通过")
 			} else {
@@ -29,11 +28,26 @@ $('#judege').on('click', function() {
 	});
 })
 
-$('.personItem').on('click', function() {
-	$('#selectPerson').text($(this).text());
+$('#delete-project-btn').on('click', function() {
+	if (cur != null) {
+		if(window.confirm('确定删除该项目？')) {
+			$.ajax({
+				url : '/index/'+cur,
+				type : 'delete',
+				dataType : 'text',	
+				success: function(data) {
+					if (data == "OK") {
+						location.reload();
+					} else {
+						alert("删除失败");
+					}
+				}
+			});
+	     }
+	} else {
+		alert("请选择要删除的项目");
+	}
+	
 })
 
 
-$('.subjectItem').on('click', function() {
-	$('#selectSubject').text($(this).text());
-})

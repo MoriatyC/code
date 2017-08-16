@@ -9,17 +9,19 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.dao.PersonRepository;
 import com.example.dao.ProjectRepository;
 import com.example.dao.SubjectRepository;
 import com.example.model.Person;
 import com.example.model.Project;
-import com.example.model.Subject;
 
 @Controller
 public class SearchController {
@@ -29,17 +31,9 @@ public class SearchController {
     private ProjectRepository projectRepository;
     @Autowired
     private SubjectRepository subjectRepository;
-
-    @RequestMapping("/save")
-    public Person save(String name, String college, Integer age, String title, String sex) {
-        Person p = personRepository.save(new Person(null, name, age, college, title, sex));
-        return p;
-    }
     
-    @GetMapping("/index")
-    public String form(Model model) {
-        for(Person p:personRepository.findAll())
-        System.out.println(p.getName());
+    @RequestMapping("/index")
+    public String index(Model model) {
         model.addAttribute("persons", personRepository.findAll());
         model.addAttribute("project", new Project());
         model.addAttribute("projects", projectRepository.findAll());
@@ -48,20 +42,25 @@ public class SearchController {
         return "index";
     }
 
+    
+
 
     //截取request中的参数，找到与参数列表中对应的key并赋值
     //@RequestParam(name="subject")指定request中的subject变量
     @PostMapping("/index")
     public String save(String projectName, String person, String description, 
-            @RequestParam(name="subject")String subjectName, String date) {
-        Person people = personRepository.findByName(person);
-        Subject subject = subjectRepository.findBySubjectName(subjectName);
-        Project p = new Project(null, projectName, people, description, subject, date, "待定");
+            @RequestParam(name="subject")String subject, String date) {
+        System.out.println(person);
+        System.out.println(subject);
+        Project p = new Project(null, projectName, personRepository.findById(Integer.valueOf(person)), 
+                description, subjectRepository.findById(Integer.valueOf(subject)), date, "待定");
         projectRepository.save(p);
-       //model.addAttribute("project", new Project());
-        //model.addAttribute("projects", projectRepository.findAll());
-        return "redirect:/index";
+
+        return "redirect:/index";//好像是请求的什么方法就用什么方法请求return的地方
     }
+
+    
+    
 
     @RequestMapping("/q1")
     public List<Person> q1(String college) {

@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import com.example.model.Person;
 
 public interface PersonRepository extends JpaRepository<Person, Integer> {
-    List<Person> findById(Integer id);
+    Person findById(Integer id);
     Person findByName(String name);
     List<Person> findByCollege(String college);
 //    Person findByNameAndCollege(String name, String college);
