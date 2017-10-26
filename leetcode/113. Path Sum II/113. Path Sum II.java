@@ -12,27 +12,24 @@ class Solution {
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<Integer> list = new ArrayList<>();
         if (root != null) {
-            list.add(root.val);
-            helper(root, sum - root.val, list);
+            helper(root, sum, list);
         }
         return ret;
     }
     public void helper(TreeNode root, int sum, List<Integer> list) {
-        if (root.left == null && root.right == null) {
-            if (0 == sum) {
+        list.add(root.val);
+        if (root.left == null && root.right == null && root.val == sum){
                 ret.add(new ArrayList<>(list));
+        } else {
+            sum -= root.val;
+            if (root.left != null) {
+                helper(root.left, sum, list);
             }
-            return;
+            if (root.right != null) {
+                helper(root.right, sum, list);
+            }
         }
-        if (root.left != null) {
-            list.add(root.left.val);
-            helper(root.left, sum - root.left.val, list);
-            list.remove(list.size() - 1);
-        }
-        if (root.right != null) {
-            list.add(root.right.val);
-            helper(root.right, sum - root.right.val, list);
-            list.remove(list.size() - 1);
-        }
+        list.remove(list.size() - 1);
+        
     }
 }
