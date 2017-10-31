@@ -1,0 +1,82 @@
+package com.DLUT.SIE.my_crawler;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MyCrawler {
+	public static String getPage(String url){
+        String result = "";
+        BufferedReader in = null;
+        	try {
+				URL realUrl = new URL(url);
+				URLConnection conn = realUrl.openConnection();
+				conn.connect();
+				in = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
+				String line;
+				while((line = in.readLine()) != null)
+				{
+					result += line + "\n";
+				}
+			} catch (Exception e) {
+				System.out.println("请求失败" + e);
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+        	finally{
+        		if(in != null)
+					try {
+						in.close();
+					} catch (IOException e) {
+						System.out.println("关闭失败");
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+        	}
+        	return result;
+
+	}
+	static public List<Model> extract(String result){
+		Pattern patTitle = Pattern.compile("title=\"(.+?)\"");
+        Matcher matcherTitle = patTitle.matcher(result);
+        Pattern patURL = Pattern.compile("href=\"(.+?)\"\\s+?title=\"");
+        Matcher matcherURL = patURL.matcher(result);
+        Pattern patText = Pattern.compile("vsb_content[\\s\\S]+?</div>");
+        Matcher matcherText;
+        List<Model> list = new ArrayList<>();
+        String text = "";
+        while(matcherTitle.find() && matcherURL.find())
+        {
+        	Model temp = new Model();
+        	temp.title = matcherTitle.group(1);
+        	temp.webUrl = "http://gs.dlut.edu.cn/" + matcherURL.group(1).substring(3);
+//        	System.out.println(temp.webUrl);
+        	text = getPage(temp.webUrl);
+        	matcherText = patText.matcher(text);
+        	if(matcherText.find())
+        	{
+        		Pattern pat = Pattern.compile(">(.*?)<");
+        		Matcher mat = pat.matcher(matcherText.group());
+        		while(mat.find())
+        		{
+        			temp.text += mat.group(1);
+        		}
+        	}
+        	temp.text.replaceAll("&nbsp", " ");
+        	list.add(temp);
+        	System.out.println(temp.text);
+        }
+        if(list.size() == 0)       
+        {
+        	System.out.println("Nothing matcher");
+        }
+        return list;
+        
+	}
+}

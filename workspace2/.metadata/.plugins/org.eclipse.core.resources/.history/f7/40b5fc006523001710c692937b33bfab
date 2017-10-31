@@ -1,0 +1,41 @@
+package first_maven;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+ class d{
+	 void f(){System.out.println(123);};
+}
+ abstract class d2 extends d{
+	 abstract void f();
+//	 void f2(){super.f();}
+ }
+public class Demo {
+
+	static <Z> void b(Z z,List<Z> list){
+		list.add(z);
+		if(z instanceof String){
+			
+		}
+	}
+	
+	static <E>	void a(E e,List<E> list){
+		b(e,list);
+	}
+	
+	
+	
+	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException
+	{
+		Map<Integer,Integer> map = new HashMap<>();
+		Map<String, List<String>> myMap = new HashMap(); 
+		List<String> list = new ArrayList<>();
+		List<String> list2 = new ArrayList<String>();
+		a("a",list);
+		list2.add("111");
+		list.add("A");// 由于addAll期望获得Collection<? extends String>类型的参数，因此下面的语句无法通过
+		list.addAll(new ArrayList<>());
+	}
+}
+
+

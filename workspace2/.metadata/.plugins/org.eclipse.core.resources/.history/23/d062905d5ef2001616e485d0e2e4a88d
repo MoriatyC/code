@@ -1,0 +1,21 @@
+package first_maven;
+
+public class study {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] words = {"Hello", "Alaska", "Dad", "Peace"};
+		String[]first = {"q","w","e","r","t","y","u","i","o","p"};
+		String[]two = {"a","s","d","f","g","h","j","k","l"};
+		String[]three = {"z","x","c","v","b","n","m"};
+		int a ='a';
+		System.out.println(a);
+		for (String word:words)
+		{
+			
+			
+		}
+		
+	}
+
+}

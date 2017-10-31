@@ -1,0 +1,144 @@
+2017-04-25 11:17:32,357 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -0    [main]    - push to queue https://github.com/code4craft
+2017-04-25 11:17:32,627  INFO - us.codecraft.webmagic.Spider -270  [main]    - Spider github.com started!
+2017-04-25 11:17:32,632  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -275  [pool-1-thread-1]    - downloading page https://github.com/code4craft
+2017-04-25 11:17:34,118  WARN - org.apache.http.client.protocol.ResponseProcessCookies -1761 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:12:57 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:12:57 -0000
+2017-04-25 11:17:34,350 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -1993 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/contact/report
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/code4craft/webmagic
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/code4craft/netty
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/code4craft/tiny
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/code4craft/jsoup
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/code4craft/xsoup
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/code4craft/blackhole
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/site/terms
+2017-04-25 11:17:34,509 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2152 [pool-1-thread-1]    - push to queue https://github.com/site/privacy
+2017-04-25 11:17:34,609  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -2252 [pool-1-thread-1]    - downloading page https://github.com/contact/report
+2017-04-25 11:17:34,935  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -2578 [pool-1-thread-1]    - get page https://github.com/contact/report error, status code 404 
+2017-04-25 11:17:35,536  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -3179 [pool-1-thread-1]    - downloading page https://github.com/code4craft/webmagic
+2017-04-25 11:17:35,988  WARN - org.apache.http.client.protocol.ResponseProcessCookies -3631 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:12:59 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:12:59 -0000
+2017-04-25 11:17:36,053 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -3696 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:17:36,115 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -3758 [pool-1-thread-1]    - push to queue https://github.com/gsh199449/spider
+2017-04-25 11:17:36,217  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -3860 [pool-1-thread-1]    - downloading page https://github.com/code4craft/netty
+2017-04-25 11:17:36,559  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -4202 [pool-1-thread-1]    - get page https://github.com/code4craft/netty error, status code 404 
+2017-04-25 11:17:36,669  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -4312 [pool-1-thread-1]    - downloading page https://github.com/code4craft/tiny
+2017-04-25 11:17:37,014  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -4657 [pool-1-thread-1]    - get page https://github.com/code4craft/tiny error, status code 404 
+2017-04-25 11:17:37,179  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -4822 [pool-1-thread-1]    - downloading page https://github.com/code4craft/jsoup
+2017-04-25 11:17:37,617  WARN - org.apache.http.client.protocol.ResponseProcessCookies -5260 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:13:01 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:13:01 -0000
+2017-04-25 11:17:37,622 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -5265 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:17:37,642 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -5285 [pool-1-thread-1]    - push to queue https://github.com/jhy/jsoup
+2017-04-25 11:17:37,742  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -5385 [pool-1-thread-1]    - downloading page https://github.com/code4craft/xsoup
+2017-04-25 11:17:38,202  WARN - org.apache.http.client.protocol.ResponseProcessCookies -5845 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:13:01 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:13:01 -0000
+2017-04-25 11:17:38,254 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -5897 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:17:38,377  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -6020 [pool-1-thread-1]    - downloading page https://github.com/code4craft/blackhole
+2017-04-25 11:17:38,812  WARN - org.apache.http.client.protocol.ResponseProcessCookies -6455 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:13:02 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:13:02 -0000
+2017-04-25 11:17:38,877 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -6520 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:17:38,896 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -6539 [pool-1-thread-1]    - push to queue https://github.com/code4craft/wifesays
+2017-04-25 11:17:38,896 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -6539 [pool-1-thread-1]    - push to queue https://github.com/code4craft/hostd
+2017-04-25 11:17:38,996  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -6639 [pool-1-thread-1]    - downloading page https://github.com/site/terms
+2017-04-25 11:17:39,313 DEBUG - us.codecraft.webmagic.downloader.CustomRedirectStrategy -6956 [pool-1-thread-1]    - Redirect requested to location 'https://help.github.com/articles/github-terms-of-service/'
+2017-04-25 11:20:20,967 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -0    [main]    - push to queue https://github.com/code4craft
+2017-04-25 11:20:21,236  INFO - us.codecraft.webmagic.Spider -269  [main]    - Spider github.com started!
+2017-04-25 11:20:21,240  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -273  [pool-1-thread-1]    - downloading page https://github.com/code4craft
+2017-04-25 11:20:22,646  WARN - org.apache.http.client.protocol.ResponseProcessCookies -1679 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:46 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:46 -0000
+2017-04-25 11:20:22,845 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -1878 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:23,003 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2036 [pool-1-thread-1]    - push to queue https://github.com/contact/report
+2017-04-25 11:20:23,003 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2036 [pool-1-thread-1]    - push to queue https://github.com/code4craft/webmagic
+2017-04-25 11:20:23,003 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2036 [pool-1-thread-1]    - push to queue https://github.com/code4craft/netty
+2017-04-25 11:20:23,003 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2036 [pool-1-thread-1]    - push to queue https://github.com/code4craft/tiny
+2017-04-25 11:20:23,003 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2036 [pool-1-thread-1]    - push to queue https://github.com/code4craft/jsoup
+2017-04-25 11:20:23,003 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2036 [pool-1-thread-1]    - push to queue https://github.com/code4craft/xsoup
+2017-04-25 11:20:23,004 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2037 [pool-1-thread-1]    - push to queue https://github.com/code4craft/blackhole
+2017-04-25 11:20:23,004 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2037 [pool-1-thread-1]    - push to queue https://github.com/site/terms
+2017-04-25 11:20:23,004 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -2037 [pool-1-thread-1]    - push to queue https://github.com/site/privacy
+2017-04-25 11:20:23,104  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -2137 [pool-1-thread-1]    - downloading page https://github.com/contact/report
+2017-04-25 11:20:23,406  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -2439 [pool-1-thread-1]    - get page https://github.com/contact/report error, status code 404 
+2017-04-25 11:20:23,938  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -2971 [pool-1-thread-1]    - downloading page https://github.com/code4craft/webmagic
+2017-04-25 11:20:24,447  WARN - org.apache.http.client.protocol.ResponseProcessCookies -3480 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:48 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:48 -0000
+2017-04-25 11:20:24,898 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -3931 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:24,956 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -3989 [pool-1-thread-1]    - push to queue https://github.com/gsh199449/spider
+2017-04-25 11:20:25,057  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -4090 [pool-1-thread-1]    - downloading page https://github.com/code4craft/netty
+2017-04-25 11:20:25,352  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -4385 [pool-1-thread-1]    - get page https://github.com/code4craft/netty error, status code 404 
+2017-04-25 11:20:25,668  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -4701 [pool-1-thread-1]    - downloading page https://github.com/code4craft/tiny
+2017-04-25 11:20:26,092  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -5125 [pool-1-thread-1]    - get page https://github.com/code4craft/tiny error, status code 404 
+2017-04-25 11:20:26,407  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -5440 [pool-1-thread-1]    - downloading page https://github.com/code4craft/jsoup
+2017-04-25 11:20:26,850  WARN - org.apache.http.client.protocol.ResponseProcessCookies -5883 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:50 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:50 -0000
+2017-04-25 11:20:26,913 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -5946 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:26,944 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -5977 [pool-1-thread-1]    - push to queue https://github.com/jhy/jsoup
+2017-04-25 11:20:27,044  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -6077 [pool-1-thread-1]    - downloading page https://github.com/code4craft/xsoup
+2017-04-25 11:20:27,483  WARN - org.apache.http.client.protocol.ResponseProcessCookies -6516 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:51 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:51 -0000
+2017-04-25 11:20:27,490 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -6523 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:27,614  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -6647 [pool-1-thread-1]    - downloading page https://github.com/code4craft/blackhole
+2017-04-25 11:20:28,019  WARN - org.apache.http.client.protocol.ResponseProcessCookies -7052 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:51 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:51 -0000
+2017-04-25 11:20:28,025 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -7058 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:28,045 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -7078 [pool-1-thread-1]    - push to queue https://github.com/code4craft/wifesays
+2017-04-25 11:20:28,045 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -7078 [pool-1-thread-1]    - push to queue https://github.com/code4craft/hostd
+2017-04-25 11:20:28,145  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -7178 [pool-1-thread-1]    - downloading page https://github.com/site/terms
+2017-04-25 11:20:28,433 DEBUG - us.codecraft.webmagic.downloader.CustomRedirectStrategy -7466 [pool-1-thread-1]    - Redirect requested to location 'https://help.github.com/articles/github-terms-of-service/'
+2017-04-25 11:20:29,545 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -8578 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:29,564 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8597 [pool-1-thread-1]    - push to queue https://github.com/enterprise/2
+2017-04-25 11:20:29,564 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8597 [pool-1-thread-1]    - push to queue https://github.com/categories/site
+2017-04-25 11:20:29,564 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8597 [pool-1-thread-1]    - push to queue https://github.com/articles/amendment
+2017-04-25 11:20:29,564 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8597 [pool-1-thread-1]    - push to queue https://github.com/articles/github
+2017-04-25 11:20:29,564 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8597 [pool-1-thread-1]    - push to queue https://github.com/articles/adding
+2017-04-25 11:20:29,565 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8598 [pool-1-thread-1]    - push to queue https://github.com/articles/making
+2017-04-25 11:20:29,565 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8598 [pool-1-thread-1]    - push to queue https://github.com/articles/dmca
+2017-04-25 11:20:29,565 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8598 [pool-1-thread-1]    - push to queue https://github.com/contact/dmca
+2017-04-25 11:20:29,565 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8598 [pool-1-thread-1]    - push to queue https://github.com/articles/what
+2017-04-25 11:20:29,565 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8598 [pool-1-thread-1]    - push to queue https://github.com/settings/billing
+2017-04-25 11:20:29,565 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8598 [pool-1-thread-1]    - push to queue https://github.com/articles/how
+2017-04-25 11:20:29,565 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -8598 [pool-1-thread-1]    - push to queue https://github.com/articles/guidelines
+2017-04-25 11:20:29,666  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -8699 [pool-1-thread-1]    - downloading page https://github.com/site/privacy
+2017-04-25 11:20:30,394  WARN - org.apache.http.client.protocol.ResponseProcessCookies -9427 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:54 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:54 -0000
+2017-04-25 11:20:30,394 DEBUG - us.codecraft.webmagic.downloader.CustomRedirectStrategy -9427 [pool-1-thread-1]    - Redirect requested to location 'https://help.github.com/articles/github-privacy-statement/'
+2017-04-25 11:20:30,902 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -9935 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:30,912 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -9945 [pool-1-thread-1]    - push to queue https://github.com/settings/admin
+2017-04-25 11:20:30,912 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -9945 [pool-1-thread-1]    - push to queue https://github.com/blog/1964
+2017-04-25 11:20:30,912 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -9945 [pool-1-thread-1]    - push to queue https://github.com/settings/emails
+2017-04-25 11:20:30,912 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -9945 [pool-1-thread-1]    - push to queue https://github.com/articles/global
+2017-04-25 11:20:30,912 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -9945 [pool-1-thread-1]    - push to queue https://github.com/contact/privacy
+2017-04-25 11:20:30,912 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -9945 [pool-1-thread-1]    - push to queue https://github.com/settings/profile
+2017-04-25 11:20:30,913 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -9946 [pool-1-thread-1]    - push to queue https://github.com/articles/keeping
+2017-04-25 11:20:31,013  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -10046 [pool-1-thread-1]    - downloading page https://github.com/gsh199449/spider
+2017-04-25 11:20:31,877  WARN - org.apache.http.client.protocol.ResponseProcessCookies -10910 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:55 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:55 -0000
+2017-04-25 11:20:32,095 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -11128 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:32,205  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -11238 [pool-1-thread-1]    - downloading page https://github.com/jhy/jsoup
+2017-04-25 11:20:32,629  WARN - org.apache.http.client.protocol.ResponseProcessCookies -11662 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:56 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:56 -0000
+2017-04-25 11:20:32,634 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -11667 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:32,758  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -11791 [pool-1-thread-1]    - downloading page https://github.com/code4craft/wifesays
+2017-04-25 11:20:33,186  WARN - org.apache.http.client.protocol.ResponseProcessCookies -12219 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:56 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:56 -0000
+2017-04-25 11:20:33,189 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -12222 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:33,302  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -12335 [pool-1-thread-1]    - downloading page https://github.com/code4craft/hostd
+2017-04-25 11:20:33,678  WARN - org.apache.http.client.protocol.ResponseProcessCookies -12711 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:15:57 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:15:57 -0000
+2017-04-25 11:20:33,682 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -12715 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:33,794  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -12827 [pool-1-thread-1]    - downloading page https://github.com/enterprise/2
+2017-04-25 11:20:34,086  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -13119 [pool-1-thread-1]    - get page https://github.com/enterprise/2 error, status code 404 
+2017-04-25 11:20:34,469  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -13502 [pool-1-thread-1]    - downloading page https://github.com/categories/site
+2017-04-25 11:20:34,763  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -13796 [pool-1-thread-1]    - get page https://github.com/categories/site error, status code 404 
+2017-04-25 11:20:35,204  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -14237 [pool-1-thread-1]    - downloading page https://github.com/articles/amendment
+2017-04-25 11:20:35,505  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -14538 [pool-1-thread-1]    - get page https://github.com/articles/amendment error, status code 404 
+2017-04-25 11:20:35,888  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -14921 [pool-1-thread-1]    - downloading page https://github.com/articles/github
+2017-04-25 11:20:36,313  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -15346 [pool-1-thread-1]    - get page https://github.com/articles/github error, status code 404 
+2017-04-25 11:20:36,697  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -15730 [pool-1-thread-1]    - downloading page https://github.com/articles/adding
+2017-04-25 11:20:37,001  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -16034 [pool-1-thread-1]    - get page https://github.com/articles/adding error, status code 404 
+2017-04-25 11:20:37,328  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -16361 [pool-1-thread-1]    - downloading page https://github.com/articles/making
+2017-04-25 11:20:37,622  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -16655 [pool-1-thread-1]    - get page https://github.com/articles/making error, status code 404 
+2017-04-25 11:20:37,940  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -16973 [pool-1-thread-1]    - downloading page https://github.com/articles/dmca
+2017-04-25 11:20:38,232  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -17265 [pool-1-thread-1]    - get page https://github.com/articles/dmca error, status code 404 
+2017-04-25 11:20:38,619  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -17652 [pool-1-thread-1]    - downloading page https://github.com/contact/dmca
+2017-04-25 11:20:38,941  WARN - org.apache.http.client.protocol.ResponseProcessCookies -17974 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:16:02 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:16:02 -0000
+2017-04-25 11:20:38,943 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -17976 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:38,948 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -17981 [pool-1-thread-1]    - push to queue https://github.com/business/customers
+2017-04-25 11:20:38,948 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -17981 [pool-1-thread-1]    - push to queue https://github.com/about/careers
+2017-04-25 11:20:38,948 DEBUG - us.codecraft.webmagic.scheduler.QueueScheduler -17981 [pool-1-thread-1]    - push to queue https://github.com/about/press
+2017-04-25 11:20:39,048  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -18081 [pool-1-thread-1]    - downloading page https://github.com/articles/what
+2017-04-25 11:20:39,340  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -18373 [pool-1-thread-1]    - get page https://github.com/articles/what error, status code 404 
+2017-04-25 11:20:39,661  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -18694 [pool-1-thread-1]    - downloading page https://github.com/settings/billing
+2017-04-25 11:20:39,954 DEBUG - us.codecraft.webmagic.downloader.CustomRedirectStrategy -18987 [pool-1-thread-1]    - Redirect requested to location 'https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fbilling'
+2017-04-25 11:20:40,268  WARN - org.apache.http.client.protocol.ResponseProcessCookies -19301 [pool-1-thread-1]    - Invalid cookie header: "Set-Cookie: logged_in=no; domain=.github.com; path=/; expires=Sat, 25 Apr 2037 03:16:03 -0000; secure; HttpOnly". Invalid 'expires' attribute: Sat, 25 Apr 2037 03:16:03 -0000
+2017-04-25 11:20:40,271 DEBUG - us.codecraft.webmagic.downloader.HttpClientDownloader -19304 [pool-1-thread-1]    - Auto get charset: utf-8
+2017-04-25 11:20:40,375  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -19408 [pool-1-thread-1]    - downloading page https://github.com/articles/how
+2017-04-25 11:20:40,669  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -19702 [pool-1-thread-1]    - get page https://github.com/articles/how error, status code 404 
+2017-04-25 11:20:41,073  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -20106 [pool-1-thread-1]    - downloading page https://github.com/articles/guidelines
+2017-04-25 11:20:41,367  WARN - us.codecraft.webmagic.downloader.HttpClientDownloader -20400 [pool-1-thread-1]    - get page https://github.com/articles/guidelines error, status code 404 
+2017-04-25 11:20:41,685  INFO - us.codecraft.webmagic.downloader.HttpClientDownloader -20718 [pool-1-thread-1]    - downloading page https://github.com/settings/admin
+2017-04-25 11:20:41,978 DEBUG - us.codecraft.webmagic.downloader.CustomRedirectStrategy -21011 [pool-1-thread-1]    - Redirect requested to location 'https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fadmin'

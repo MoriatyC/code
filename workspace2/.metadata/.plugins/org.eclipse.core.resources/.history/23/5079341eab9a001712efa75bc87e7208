@@ -1,0 +1,41 @@
+package first_maven;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Main {  
+     public class TreeNode {
+             int val;
+             TreeNode left;
+             TreeNode right;
+             TreeNode(int x) { val = x; }
+         }
+    public String serialize(TreeNode root) {
+        if (root == null) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        List<TreeNode> list = new LinkedList<>();
+        list.add(root);
+        while (!list.isEmpty()) {
+            TreeNode cur = list.remove();
+            if (cur == null) {
+                sb.append("s,");
+            } else {
+                sb.append(cur.val + ",");
+            }
+            list.add(cur.left);
+            list.add(cur.right);
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        String s = "1,2,3,4,5,";
+        String[] arr = s.split(",");
+        List<String> list = Arrays.asList(arr);
+        
+        
+    }
+}

@@ -1,0 +1,15 @@
+package com.dlut.cmh.sie;
+import java.nio.file.Paths;
+
+import com.dlut.cmh.sie.*;
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        LabelImage.feature("D:\\0.jpg");
+    }
+}

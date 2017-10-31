@@ -1,0 +1,18 @@
+package first_maven;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexDemo {
+    public static void main(String[] args) {
+        String s = "Person(id=112321321, name=李四, age=44, college=外语学院, title=教授, sex=女)";
+        Pattern p = Pattern.compile("(\\d)");
+        Matcher m = p.matcher(s);
+        int count = 0;
+       while(m.find())
+        {
+            System.out.println(m.group(count++));
+        }
+   
+    }
+}

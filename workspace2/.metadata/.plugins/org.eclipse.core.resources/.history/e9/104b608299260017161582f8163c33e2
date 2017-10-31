@@ -1,0 +1,40 @@
+package com.DLUT.SIE.my_crawler;
+
+import java.io.*;
+import java.net.*;
+public class App 
+{
+    public static void main( String[] args )
+    {
+        String url = "http://gs.dlut.edu.cn/";
+        String result = "";
+        BufferedReader in = null;
+        	try {
+				URL realUrl = new URL(url);
+				URLConnection conn = realUrl.openConnection();
+				conn.connect();
+				in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				String line;
+				while((line = in.readLine()) != null)
+				{
+					result += line;
+				}
+			} catch (Exception e) {
+				System.out.println("请求失败" + e);
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+        	finally{
+        		if(in != null)
+					try {
+						in.close();
+					} catch (IOException e) {
+						System.out.println("关闭失败");
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+        	}
+        	System.out.println(result);
+
+    }
+}

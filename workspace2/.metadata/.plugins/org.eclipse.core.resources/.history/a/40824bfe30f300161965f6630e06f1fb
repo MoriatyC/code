@@ -1,0 +1,26 @@
+package first_maven;
+
+import java.util.*;
+class Person{
+	private void test(){
+		System.out.println("ni kan bu jian wo");
+	}
+	public void test2(){
+		test();
+		System.out.println("u can see me");
+	}
+	 int x = 10;
+}
+public class study {
+
+	public static void main(String[] args) {
+	 Person p1 = new Person();
+	 Person p2 = new Person();
+	 int z,y;
+	 z = p1.x+1;
+	 y = p2.x+2;
+	 System.out.println(z);
+	 System.out.println(y);
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.dlut.cmh.sie;
+import java.nio.file.Paths;
+
+import com.dlut.cmh.sie.*;
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        int a = 1, b= 1;
+        try(a / b){
+            System.out.println(123);
+        }
+    }
+}

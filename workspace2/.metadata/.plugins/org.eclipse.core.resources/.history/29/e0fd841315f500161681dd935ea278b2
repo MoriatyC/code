@@ -1,0 +1,21 @@
+package first_maven;
+
+import java.util.*;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+public class Demo {
+	public static void main(String[] args) {
+		Queue<Integer> que = new LinkedList<Integer>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode root = new TreeNode(1);
+		que.add(1);
+		System.out.println(que[0]);
+		
+		
+	}
+
+}

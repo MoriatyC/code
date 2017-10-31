@@ -19,16 +19,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 public class HttpClientDemo {
-    static RequestConfig createConfig(int timeout, boolean redirectsEnabled)
-    {
-        //实行自定义request解除自动跳转
-        return RequestConfig.custom()
-            .setSocketTimeout(timeout)
-            .setConnectTimeout(timeout)
-            .setConnectionRequestTimeout(timeout)
-            .setRedirectsEnabled(redirectsEnabled)
-            .build();
-    }
+    
 
 	public static void main(String[] args) {
 		//1.使用默认配置的httpclient(默认将自动执行跳转)
@@ -45,7 +36,7 @@ public class HttpClientDemo {
 //	    HttpPost httpPost = new HttpPost(url);
 	    HttpGet httpGet = new HttpGet(url);
 	  
-	    httpGet.setConfig(createConfig(5000,false));
+
 	    InputStream inputStream = null;
 	    CloseableHttpResponse response = null;
 	    try {

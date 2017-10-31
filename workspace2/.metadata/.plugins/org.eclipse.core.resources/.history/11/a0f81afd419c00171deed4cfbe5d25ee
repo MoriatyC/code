@@ -1,0 +1,19 @@
+package first_maven;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {  
+    static void f(String s) {
+        s = "b";
+    }
+    static void ff(Integer i) {
+        i = 5;
+    }
+    public static void main(String[] args) {
+        String s = "a";
+        Integer i = 1;
+        ff(i);
+        System.out.println(i);
+    }
+}

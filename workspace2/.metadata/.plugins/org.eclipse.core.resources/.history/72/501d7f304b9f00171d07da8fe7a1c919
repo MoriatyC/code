@@ -1,0 +1,61 @@
+package first_maven;
+
+import java.util.Stack;
+
+public class StackImpQueue {
+    Stack<Integer> stack1;//顶部存储尾
+    Stack<Integer> stack2;//顶部存储头
+    int flag;
+    public StackImpQueue() {
+        stack1 = new Stack<>();
+        stack2 = new Stack<>();
+    }
+    void print() {
+        if (flag == 1) {
+            while (!stack1.isEmpty()) {
+                stack2.push(stack1.pop());
+            }
+            while (!stack2.isEmpty()) {
+                System.out.println(stack2.pop());
+            }
+        } else {
+            while (!stack2.isEmpty()) {
+                System.out.println(stack2.pop());
+            }
+        }
+    }
+    public void appendTail(int i) {
+        stack1.push(i);
+    }
+    public Integer deleteHead() {
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty()) {
+                stack2.push(stack2.pop());
+            }
+        }
+        
+        try {
+            if (stack2.isEmpty()) {
+                throw new Exception("队列为空");
+            } else {
+                return stack2.pop();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public static void main(String[] args) {
+        int a = 6;  
+        int b = 0;  
+        try { // try监控区域  
+              
+            if (b == 0) throw new ArithmeticException(); // 通过throw语句抛出异常  
+            System.out.println("a/b的值是：" + a / b);  
+        }  
+        catch (ArithmeticException e) { // catch捕捉异常  
+            System.out.println("程序出现异常，变量b不能为0。");  
+        }  
+        System.out.println("程序正常结束。");  
+    }
+}

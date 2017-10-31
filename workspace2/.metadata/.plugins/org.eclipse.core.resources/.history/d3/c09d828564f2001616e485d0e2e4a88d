@@ -1,0 +1,30 @@
+package first_maven;
+
+public class study {
+
+	public static void main(String[] args) {
+	    String[] ret;
+	    String[] words = {"Hello","Alaska","Dad","Peace"};
+        String[] alp = {"qwertyuiop","asdfghjkl","zxcvbnm"};
+        String sword = "";
+        int flag = 1;
+        for(String word:words){
+            for(int i = 0; i < 3; i++)
+            {
+                flag = 1;
+                sword = word.toLowerCase();
+                for(int j = 0; j < sword.length();j++){                	
+                    if(alp[i].contains(sword.charAt(j).toString()))
+                        flag*=1;
+                    else
+                        flag*=0;
+                }
+                if(flag==1)
+                    ret.add(word);
+            }
+        }
+        System.out.println(ret);
+		
+	}
+
+}

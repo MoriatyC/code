@@ -1,0 +1,19 @@
+package first_maven;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.apache.commons.lang3.ArrayUtils;
+
+public class Demo {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3};
+       
+        List list = Arrays.asList(ArrayUtils.toObject(arr));
+        for (Object a: list) {
+            System.out.println(a);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+package com.DLUT.SIE.my_crawler;
+
+import java.util.List;
+
+public class Model 
+{
+	String question;
+	String webUrl;
+	List<String> text;
+	public App
+    
+}

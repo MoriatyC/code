@@ -1,0 +1,23 @@
+package first_maven;
+
+import java.util.*;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+public class Demo {
+	public static void main(String[] args) {
+		TreeNode root =new TreeNode(1);
+		HashMap map = new HashMap();
+	int[] ar = new int[10];
+		Iterator iter = map.keySet().iterator();
+		while (iter.hasNext()){
+		ar[1] = (int)iter.next();
+
+		}
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+package os;
+
+public class Solution {
+    public char findTheDifference(String s, String t) {
+        char[] ss = s.toCharArray();
+        char[] tt = t.toCharArray();
+        int a=0,b=0;
+        int i=0;
+        for(i=0;i<ss.length;i++)
+        {
+            a+=ss[i];
+           
+        }
+          for(i=0;i<tt.length;i++)
+        {
+            b+=tt[i];
+        }
+       
+    
+        return (char)(b-a);
+        
+    }
+}

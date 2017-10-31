@@ -1,0 +1,32 @@
+package first_maven;
+
+import java.util.*;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+public class Demo {
+	public static void main(String[] args) {
+		Queue<TreeNode> que = new LinkedList<TreeNode>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode root = new TreeNode(1);
+		que.add(root);
+		TreeNode temp = new TreeNode(0);
+		while(true)
+		{
+			while(!que.isEmpty())
+			{
+				stack.push(que.peek().left);
+				//que.add(que.peek().left)
+				stack.push(que.peek().right);
+				//que.add(que.poll().left);
+			}
+			
+			
+		}
+		
+	}
+
+}

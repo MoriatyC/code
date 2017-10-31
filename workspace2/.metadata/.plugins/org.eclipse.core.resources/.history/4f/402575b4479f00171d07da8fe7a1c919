@@ -1,0 +1,27 @@
+package first_maven;
+
+import java.util.List;
+
+class TreeNode {
+     int val;
+     TreeNode left;
+     TreeNode right;
+     TreeNode(int x) { val = x; }
+ }
+
+public class TreeDemo {
+    TreeNode build(List<Integer> pre, List<Integer> in) {
+        if (pre == null || pre.size() == 0) {
+            return null;
+        }
+        int rootVal = pre.get(0);
+        TreeNode root = new TreeNode(rootVal);
+        in.indexOf(rootVal);
+        
+        return root;
+    }
+    public static void main(String[] args) {
+        
+    }
+
+}

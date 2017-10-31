@@ -1,0 +1,15 @@
+package first_maven;
+
+public class Main{
+    public static int hammingWeight(int n) {
+        int ones = 0;
+        while(n!=0) {
+            ones = ones + (n & 1);
+            n = n>>>1;
+        }
+        return ones;
+    }
+    public static void main(String[] args) {
+        System.out.println(Integer.MIN_VALUE);
+    }
+}

@@ -1,0 +1,22 @@
+package com.dlut.cmh.practice;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        String s = "asd";
+        System.out.println( s.contains("ass"));
+        String ss = "";
+        char[] c = ss.toCharArray();
+        System.out.println(c.length);
+        List<String> arr = new ArrayList<>();
+        Collections.sort(arr, new Comparator<String>{
+            @Override
+            public int compare(String s1, String s2) {
+                return s2.compareTo(s1);
+            }
+        });
+    }
+}

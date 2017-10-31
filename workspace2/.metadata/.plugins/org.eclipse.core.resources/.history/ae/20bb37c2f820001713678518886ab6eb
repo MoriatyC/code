@@ -1,0 +1,59 @@
+package first_maven;
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int Q = sc.nextInt();
+        int[] A = new int[55];
+        int[][] dp = new int[1005][1005];//dp【i】【j】答错I答对J最好记录
+        int[][] level = new int[1005][1005];//nm
+        int canPass, N, M, S, T;
+        while(Q-- > 0)
+        {
+            N = sc.nextInt();//总关卡
+            M = sc.nextInt();//答题机会
+            S = sc.nextInt();//right
+            T = sc.nextInt();//wrong
+            for(int i = 1; i <= N; i++)
+            {
+            	for(int j = 0; j <= M; j++)
+            	{	dp[i][j] = Integer.MAX_VALUE;
+            	System.out.println(dp[i][j]);}
+            }
+            for(int i = 1; i <= N; i++)
+            {
+                A[i] = sc.nextInt();
+                canPass = (int)Math.ceil(1.0 * A[i] / S);//每关最多答对题数
+                for(int j = 0; j <= canPass; j++)
+                {
+                	int rest = A[i] - j * S;//当前level剩下的分数
+                	if(rest > 0)
+                	{
+                		rest = (int)Math.ceil(1.0 * rest / T);//rest 答错题目数
+                	}
+                	else
+                		rest = 0;
+                	for (int k = 0; j + rest + k <= M  ; ++k)  
+                    {  //i 关 j 答对题目  /k
+                		System.out.println(dp[1][0] + j);
+//                		g[i][j] = max{g[i-1][j] + T, g[i][j-1] + S}
+//                		  System.out.println("before"+"i"+i+"j+rest+k"+(j+rest+k)+"   "+dp[i][j + rest + k]+"k====="+k+"j====="+j+"rest====="+rest);
+                        dp[i][j + rest + k] = Math.min (dp[i][j + rest + k], dp[i-1][k]+j );  
+//                        System.out.println("after"+"i"+i+"j+rest+k"+(j+rest+k)+"   "+dp[i][j + rest + k]);
+                    } 
+                }
+            }
+            int ret = Integer.MAX_VALUE;
+            for(int i = 0; i <= M; i++)
+            {
+            	ret = Math.min(ret, dp[N][i]);
+            }
+            if(ret <= M)
+            	System.out.println(ret);
+            else
+            	System.out.println("No");
+            
+        }
+    }
+}

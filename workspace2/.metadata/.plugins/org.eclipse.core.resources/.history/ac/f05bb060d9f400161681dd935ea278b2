@@ -1,0 +1,16 @@
+package first_maven;
+
+import java.util.*;
+class A{
+	public void A()
+	{
+		System.out.println("this is A");
+	}
+}
+public class Demo {
+
+	public static void main(String[] args) {
+		A a = new A();
+	}
+
+}

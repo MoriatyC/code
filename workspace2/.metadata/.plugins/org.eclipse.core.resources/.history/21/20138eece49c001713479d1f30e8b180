@@ -1,0 +1,44 @@
+package first_maven;
+
+class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) {
+         val = x;
+         next = null;
+     }
+ }
+public class Main {  
+    public static void solution(char[] string) {
+        if (string == null || string.length == 0) {
+            return;
+        }
+        int countBank = 0;
+        int realLength = 0;
+        for (char c: string) {
+            realLength++;
+            if (c == ' ') {
+                countBank++;
+            }
+        }
+        int newLength = realLength + 2 * countBank;
+        while (realLength >=0 && realLength != newLength) {
+            if (string[realLength] != ' ') {
+                string[newLength--] = string[realLength--];
+            } else {
+                string[newLength--] = '0';
+                string[newLength--] = '2';
+                string[newLength--] = '%';
+                realLength--;
+            }
+        }
+        
+    }
+    public static void main(String[] args) {
+       char c = '';
+       
+       char[] string = "we are happy".toCharArray();
+       solution(string);
+       System.out.println(String.valueOf(string));
+    }
+}

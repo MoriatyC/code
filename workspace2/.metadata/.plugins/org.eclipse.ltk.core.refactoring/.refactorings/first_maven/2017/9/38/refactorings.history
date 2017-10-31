@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;first_maven&apos; to &apos;practice/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;first_maven&apos;&#x0D;&#x0A;- Destination element: &apos;practice/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;first_maven/src/main/java/first_maven&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=practice/src\/main\/java" element1="/src\/main\/java&lt;first_maven" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1505875520226" version="1.0"/>
+</session>

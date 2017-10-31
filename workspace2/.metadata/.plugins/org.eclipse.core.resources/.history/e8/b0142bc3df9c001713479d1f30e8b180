@@ -1,0 +1,24 @@
+package first_maven;
+
+class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) {
+         val = x;
+         next = null;
+     }
+ }
+public class Main {  
+    public static String solution(String input) {
+        String[] arr = input.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (String word: arr) {
+            sb.append(word).append("%20");
+        }
+        return sb.toString().substring(0, sb.toString().length() - 3);
+        
+    }
+    public static void main(String[] args) {
+        System.out.println(solution("we are happy"));
+    }
+}

@@ -1,0 +1,11 @@
+package first_maven;
+
+public class study {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int [1]a={1};
+		
+	}
+
+}

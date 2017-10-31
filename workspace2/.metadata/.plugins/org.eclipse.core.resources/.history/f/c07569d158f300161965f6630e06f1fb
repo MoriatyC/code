@@ -1,0 +1,31 @@
+package first_maven;
+
+import java.util.*;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] findNums = {4,1,2};
+		int[] nums = {1,3,4,2};
+		List<Integer> findList = Arrays.asList(findNums);
+		List<Integer> numsList = Arrays.asList(nums);
+		List<Integer> ret = new ArrayList();
+		int index = -1;
+/*		for(int i = 0; i < findNums.length; i++)
+		{
+			index = numsList.indexOf(findList.get(i));
+			for(int j = index + 1; j <nums.length; j++ )
+			{
+				if(numsList.get(j)>findList.get(i))
+				{
+					ret.add(numsList.get(j));
+				}
+			}
+		}
+		*/
+		System.out.println(findList.get(0)[0]);
+
+	}
+
+}

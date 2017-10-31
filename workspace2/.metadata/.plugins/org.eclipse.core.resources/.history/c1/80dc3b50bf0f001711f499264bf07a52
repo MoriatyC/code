@@ -1,0 +1,10 @@
+package first_maven;
+
+public class test1 {
+
+	public static void main(String[] args) {
+		int[][] nums =new int[2][2];
+		System.out.println(nums.length * nums[0].length);
+	}
+
+}

@@ -1,0 +1,28 @@
+package first_maven;
+
+public class study {
+
+	public static void main(String[] args) {
+	    String[] ret;
+	    String[] words = {"Hello","Alaska","Dad","Peace"};
+        String[] alp = {"qwertyuiop","asdfghjkl","zxcvbnm"};
+        int flag = 1;
+        for(String word:words){
+            for(int i = 0; i < 3; i++)
+            {
+                flag = 1;
+                for(String letter:word.toLowerCase()){
+                    if(alp[i].contains(letter))
+                        flag*=1;
+                    else
+                        flag*=0;
+                }
+                if(flag==1)
+                    ret.add(word);
+            }
+        }
+        return ret;
+		
+	}
+
+}

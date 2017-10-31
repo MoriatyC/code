@@ -1,0 +1,35 @@
+package first_maven;
+
+import java.util.ArrayList;
+import java.util.List;
+
+ class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) {
+         val = x;
+         next = null;
+     }
+ }
+public class Main {  
+    public boolean hasCycle(ListNode head) {
+        ListNode p1 = head;
+        ListNode p2 = head;
+        while (p2 .next != null && p2 != null) {
+            if (p1.val == p2.val) {
+                return true;
+            }
+            p1 = p1.next;
+            p2 = p2.next.next;
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        Integer i = new Integer(10);
+        System.out.println(System.identityHashCode(i));
+        i = 1;
+        System.out.println(System.identityHashCode(i));
+        int s = 12;
+        ff(i);
+    }
+}

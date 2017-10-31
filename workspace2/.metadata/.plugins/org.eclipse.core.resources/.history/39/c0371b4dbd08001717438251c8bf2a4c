@@ -1,0 +1,45 @@
+package first_maven;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.IntStream;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+public class Demo {
+   public static void reverseString(char[] word,int i,int j) {
+        while (i < j) {
+            char temp = word[i];
+            word[i] = word[j];
+            word[j] = temp;
+            i++;
+            j--;
+        }
+    }
+	public static void main(String[] args) {
+		String s = "abcdefg";
+		char[] c = s.toCharArray();
+		System.out.println(c.toString());
+		int k = 2;
+		for(int i = 0; i < s.length() ; i=i+2*k)
+		{
+			reverseString(c,i,i+2*k-1);
+		}
+		int tail = s.length() % (k*2);
+		if(tail < k)
+		{
+			reverseString(c,s.length()-1-tail+1,s.length()-1);
+		}
+		else
+		{
+			reverseString(c,s.length()-tail,s.length()-1-tail+k);
+		}
+	}
+
+}
+
+
+ 

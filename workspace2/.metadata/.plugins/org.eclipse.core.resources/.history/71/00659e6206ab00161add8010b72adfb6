@@ -1,0 +1,22 @@
+package os;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="A";
+		char[] ch = s.toCharArray();
+	     int ret=0;
+	     for(int i=0;i<ch.length;i++)
+	     {
+	         ch[i]-=64;
+	     }
+	     for(int i=0;i<ch.length;i++)
+	     {
+	         ret=(int) (((int)ch[ch.length-1-i])*Math.pow(26, i));
+	     }
+	System.out.println(ret);
+	
+	}
+
+}

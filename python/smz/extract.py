@@ -9,12 +9,6 @@ file_out = os.path.join(BASE_DIR, 'out/1.txt')
 file_in = os.path.join(BASE_DIR, 'in/1.doc')
 
 
-def test(path):
-    with open(path) as f:
-        t = f.read()
-        print t
-
-
 def extract(path):
     try:
         keys = []

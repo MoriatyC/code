@@ -1,0 +1,27 @@
+package first_maven;
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int Q = sc.nextInt();
+        while(Q-- > 0)
+        {
+            int N = sc.nextInt();//总关卡guanka
+            int M = sc.nextInt();//答题机会
+            int S = sc.nextInt();//right
+            int T = sc.nextInt();//wrong
+            int[] A = new int[N];
+            int[][] dp = new int[N][];//nm;
+            int[][] level = new int[N][];//nm
+            for(int i = 0; i < N; i++)
+            {
+                A[i] = sc.nextInt();
+                for(int j = 0; j <= M; j++)
+                {
+                    level[i][j] = Math.max(0, (int)Math.ceil((A[i]-j*T)/S));
+                }
+            }
+        }
+    }
+}

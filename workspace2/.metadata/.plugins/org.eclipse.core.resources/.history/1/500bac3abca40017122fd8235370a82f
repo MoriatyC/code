@@ -1,0 +1,16 @@
+package first_maven;
+
+public class Main{
+    public static int hammingWeight(int n) {
+        long tmp = n;
+        int ret = 0;
+        while (tmp > 0) {
+            ret++;
+            tmp = tmp & (tmp - 1);
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        System.out.println(hammingWeight(2147483648));
+    }
+}

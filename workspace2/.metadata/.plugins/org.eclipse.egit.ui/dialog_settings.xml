@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="2" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<item value="true" key="CommitDialog.showUntracked"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/deeplearning4j/deeplearning4j.git"/>
+		<item value="https://github.com/tensorflow/tensorflow.git"/>
+	</list>
+	<list key="CommitDialog.authorValues">
+		<item value="MoriatyC &lt;119889525@qq.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="MoriatyC &lt;119889525@qq.com&gt;"/>
+	</list>
+	<section name="GitImportWizard">
+	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item value="579" key="DIALOG_WIDTH"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<item value="397" key="DIALOG_HEIGHT"/>
+		<item value="439" key="DIALOG_X_ORIGIN"/>
+		<item value="194" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
+		<item value="712" key="DIALOG_WIDTH"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<item value="649" key="DIALOG_HEIGHT"/>
+		<item value="372" key="DIALOG_X_ORIGIN"/>
+		<item value="26" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+	</section>
+</section>

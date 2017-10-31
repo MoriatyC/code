@@ -1,0 +1,70 @@
+package com.DLUT.SIE.my_crawler;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MyCrawler {
+	public static String getPage(String url){
+        String result = "";
+        BufferedReader in = null;
+        	try {
+				URL realUrl = new URL(url);
+				URLConnection conn = realUrl.openConnection();
+				long startTime = System.currentTimeMillis();
+				
+				conn.connect();
+				in = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
+				String line;
+				while((line = in.readLine()) != null)
+				{
+					result += line + "\n";
+				}
+				long endTime = System.currentTimeMillis();
+				System.out.println("程序运行时间：" + (endTime - startTime)*1.0/i + "ms");
+			} catch (Exception e) {
+				System.out.println("请求失败" + e);
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+        	finally{
+        		if(in != null)
+					try {
+						in.close();
+					} catch (IOException e) {
+						System.out.println("关闭失败");
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+        	}
+        	return result;
+
+	}
+	static public List<Model> extract(String result){
+		Pattern patTitle = Pattern.compile("title=\"(.+?)\"");
+        Matcher matcherTitle = patTitle.matcher(result);
+        Pattern patURL = Pattern.compile("href=\"(.+?)\"\\s+?title=\"");
+        Matcher matcherURL = patURL.matcher(result);
+        List<Model> list = new ArrayList<>();
+        while(matcherTitle.find() && matcherURL.find())
+        {
+        	Model temp = new Model();
+        	temp.title = matcherTitle.group(1);
+        	temp.webUrl = matcherURL.group(1);
+        	list.add(temp);
+        	Model.count++;
+        }
+        if(list.size() == 0)       
+        {
+        	System.out.println("Nothing matcher");
+        }
+        return list;
+        
+	}
+}

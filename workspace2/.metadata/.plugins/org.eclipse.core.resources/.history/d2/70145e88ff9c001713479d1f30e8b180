@@ -1,0 +1,23 @@
+package first_maven;
+class Test {
+    public Test() {
+        System.out.println(123);
+    }
+}
+public class Main {  
+  
+    public static void main(String[] args) {
+        char[] string = new char[50];
+        String s = null;
+        String s2 = "";
+        String s3 = "we arehappy";
+        String s4 = "we are happy";
+        int index = 0;
+        char[] tmp = s.toCharArray();
+        for (char c: tmp) {
+            string[index++] = c;
+        }
+        solution(string, s);
+        System.out.println(String.valueOf(string));
+    }
+}

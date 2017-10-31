@@ -1,0 +1,28 @@
+package com.dlut.cmh.practice;
+
+import java.util.Random;
+
+public class Main {
+    int finbo(int n) {
+        int a = 1;
+        int b = 0;
+        int ret = 0;
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        for (int i = 2; i <=n; i++) {
+            ret = a + b;
+            b = a;
+            a = ret;
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        char a=66;
+        int c=2;
+        a=a+(char)c;
+    }
+}

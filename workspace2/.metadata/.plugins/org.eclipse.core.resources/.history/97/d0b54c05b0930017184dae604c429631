@@ -1,0 +1,16 @@
+package first_maven;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+class superClass{
+    static {
+        System.out.println("123");
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+        superClass[] a = new superClass[2];
+    }
+}

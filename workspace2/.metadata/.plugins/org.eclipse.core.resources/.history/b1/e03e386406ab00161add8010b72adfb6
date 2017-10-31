@@ -1,0 +1,24 @@
+package os;
+
+public class test {
+
+	public static void main(String[] args) {
+		int n = 1;
+		 int a[] = new int[10];
+	        String ret="";
+	        int positon=0;
+	        for(;n>0;n/=26)
+	        {
+	            a[positon++] = n%26;
+	        }
+	        a[positon] = n%26;
+	        for(;positon>=0;positon--)
+	        {
+	            ret+=positon+'A'-1;
+	        }
+	        return ret;
+	System.out.println(ret);
+	
+	}
+
+}

@@ -1,0 +1,33 @@
+package first_maven;
+import java.util.*;
+public class test1{
+	public static void main(String[]args){
+//    	Map<Character,Character> map = new HashMap();
+//    	map.put('A', 'T');
+//        map.put('T','A');
+//        map.put('C','G');
+//        map.put('G','C');
+//        Scanner sc = new Scanner(System.in);
+//        String s1 = sc.next();
+//        String s2 = sc.next();
+//        String s3;
+//        char[] temp = new char[s1.length()];
+//        for(int i = 0; i < s1.length(); i++)
+//        {
+//        	temp[i] = map.get(s1.charAt(i));
+//        }
+//        s3 = new String(temp);
+//        int ret = 0;
+//        for(int i = 0; i < s1.length(); i++)
+//        {
+//        	if(s2.charAt(i) != s3.charAt(i))
+//        	{
+//        		ret++;
+//        	}
+//        }
+		Integer x = 1;
+		
+        System.out.println(Integer.valueOf("123"));
+        
+    }
+}

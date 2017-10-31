@@ -1,0 +1,18 @@
+package first_maven;
+
+import java.util.*;
+import java.util.Map.Entry;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+
+public class Demo {
+	public static void main(String[] args) {
+		int[] a = new int[19];
+		System.out.println(a[0]);
+	}
+
+}

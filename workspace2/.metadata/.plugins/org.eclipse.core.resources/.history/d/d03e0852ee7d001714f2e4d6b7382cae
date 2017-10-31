@@ -1,0 +1,22 @@
+package first_maven;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+class a {
+    void f() {
+        x();
+    }
+    void x() {
+        System.out.println("a.x");
+    }
+}
+public class Demo extends a{
+    void x() {
+        System.out.println("aaaa.x");
+    }
+    public static void main(String[] args) {
+        Demo demo = new Demo();
+        demo.super.x();
+    }
+}

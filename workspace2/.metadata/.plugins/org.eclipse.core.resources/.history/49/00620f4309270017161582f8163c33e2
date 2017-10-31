@@ -1,0 +1,45 @@
+package com.DLUT.SIE.my_crawler;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+	public static void main(String[] args) {
+		List<Model> list = new ArrayList<>();
+		String url = "http://gs.dlut.edu.cn/index/zytz.htm";
+		String result = MyCrawler.getPage(url);
+		Pattern pat = Pattern.compile("1/(\\d+)");
+		Matcher matcher = pat.matcher(result);
+		int page = 0;
+		if(matcher.find())
+		{
+			page = Integer.valueOf(matcher.group(1));
+			list = MyCrawler.extract(result);
+			for(Model m: list)
+			{
+				System.out.println(m);
+			}
+		}
+		else
+		{
+			System.out.println("查找失败");
+		}
+		System.out.println("1111111111111111111111111111111111111111111111111111111111111111111111");
+		System.out.println(page);
+		while(--page > 0)
+		{
+			url = "http://gs.dlut.edu.cn/index/zytz/" + page + ".htm";
+			list = MyCrawler.extract(result);
+			for(Model m: list)
+			{
+				System.out.println(m);
+			}
+		}
+		System.out.println(page);
+		 
+		
+	}
+
+}

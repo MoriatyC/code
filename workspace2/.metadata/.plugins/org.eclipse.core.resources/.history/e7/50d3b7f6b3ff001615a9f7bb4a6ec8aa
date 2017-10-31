@@ -1,0 +1,27 @@
+package first_maven;
+
+import java.util.*;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+public class Demo {
+
+	public static void main(String[] args) {
+		int[] nums = {-1, 0, 1, 2, -1, -4};
+		int left = 0;
+		int right = nums.length;
+		int mid = 1;
+		List<List<Integer>> ret = new ArrayList<List<Integer>>();
+		Arrays.sort(nums);
+		while(left == right)
+		{
+			
+		}
+		System.out.println(nums);
+	
+	}
+
+}

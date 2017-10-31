@@ -1,0 +1,15 @@
+package first_maven;
+import java.util.*;
+
+interface MyInterface{}
+public class Demo {
+	static class a {
+	}
+	public static void main(String[] args){
+	    Random random = new Random(1);
+	    System.out.println(random.next());
+	   
+	}
+}
+
+

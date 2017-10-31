@@ -1,0 +1,24 @@
+package com.dlut.cmh.practice;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Main {
+    void dfs(TreeNode root, int remain, int[] ret, ListNode<Integer> list) {
+        if (root == null) {
+            return;
+        }
+        remain -= root.val;
+        list.add(root.val);
+        if (remain == 0) {
+            ret[0]++;
+        }
+        dfs(root.left, remain, ret, list);
+        dfs(root.right, remain, ret, list);
+        list.remove(list.size() - 1);
+    }
+    public static void main(String[] args) {
+        System.out.println(Integer.MAX_VALUE);
+    }
+}

@@ -1,0 +1,54 @@
+package first_maven;
+
+import java.util.LinkedList;
+import java.util.List;
+
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) { val = x; }
+}
+
+public class ListMain {
+    static void print(ListNode head) {
+        if (head == null) {
+            System.out.println("null");
+        }
+        while (head != null) {
+            System.out.println(head.val);
+            head = head.next;
+        }
+    }
+    static ListNode solution(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode last = null;
+        ListNode cur = head;
+        ListNode next;
+        while (cur != null) {
+            next = cur.next;
+            cur.next = last;
+            last = cur;
+            cur = next;
+        }
+        return last;
+    }
+    
+    public static void main(String[] args) {
+        ListNode l1 = new ListNode(1);
+//        ListNode l2 = new ListNode(2);
+//        ListNode l3= new ListNode(3);
+//        ListNode l4= new ListNode(4);
+//        ListNode l5= new ListNode(5);
+//        ListNode l6= new ListNode(6);
+//        l1.next = l2;
+//        l2.next = l3;
+//        l3.next = l4;
+//        l4.next = l5;
+//        l5.next = l6;
+        ListNode tmp = solution(l1);
+        print(tmp);
+     
+    }
+}

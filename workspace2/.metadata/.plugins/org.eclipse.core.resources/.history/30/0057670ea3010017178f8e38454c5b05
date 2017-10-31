@@ -1,0 +1,44 @@
+package first_maven;
+
+import java.util.*;
+import java.util.Map.Entry;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+
+public class Demo {
+	  static void swap(int[] a,int i, int j)
+	 {
+		 int temp = a[i];
+		  a[i] = a[j];
+		  a[j] = temp;
+		 
+	 }
+	public static void main(String[] args) {
+		String s = "Aabb";
+		Map<Character,Integer> map = new LinkedHashMap<Character,Integer>();
+		char  c ;
+		for(int i = 0; i < s.length();i++)
+		{
+			c = s.charAt(i);
+			if(map.containsKey(c))
+			{
+				map.put(c, map.get(c) - 1);
+			}
+			else
+			{
+				map.put(c, -1);
+			}
+		}
+		List<Map.Entry<Character, Integer>> list = new LinkedList<Map.Entry<Character, Integer>>(map.entrySet());
+		Collections.sort(list, new Comparator<Map.Entry<Character, Integer>>() {
+            public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
+                return (o2.getValue()).compareTo(o1.getValue());
+            }
+        });
+	}
+
+}

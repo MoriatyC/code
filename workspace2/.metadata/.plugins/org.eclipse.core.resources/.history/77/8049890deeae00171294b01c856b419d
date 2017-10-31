@@ -1,0 +1,42 @@
+package com.dlut.cmh.practice;
+
+import java.util.Random;
+
+public class Main {
+    static void quicksort(int[] arr, int start, int end) {
+        if (arr == null || arr.length == 0) {
+            return;
+        }
+        int pivot = partion(arr, start, end);
+        quicksort(arr, start, pivot - 1);
+        quicksort(arr, pivot + 1, end);
+    }
+    static int partion(int[] arr, int left, int right) {
+        Random r = new Random();
+        int pivot = left + r.nextInt(right - left + 1);
+        int tmp = arr[pivot];
+        arr[pivot] = arr[left];
+        while (left < right) {
+            while (left < right && arr[right] > tmp) {
+                right--;
+            }
+            while (left < right && arr[left] < tmp) {
+                left++;
+            }
+            if (left < right) {
+                int tp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = tp;
+            }
+        }
+        arr[left] = tmp;
+        return left;
+    }
+    public static void main(String[] args) {
+        int[] arr = {1,4,2,5,7,8,12,16,64,43};
+        quicksort(arr, 0, arr.length - 1);
+        for (int i : arr) {
+            System.out.println(i);
+        }
+    }
+}

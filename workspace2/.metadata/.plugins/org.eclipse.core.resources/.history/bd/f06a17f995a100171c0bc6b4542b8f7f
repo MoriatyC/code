@@ -1,0 +1,33 @@
+package com.dlut.cmh.practice;
+
+import java.util.Random;
+
+public class Main {
+    int random(int left, int right) {
+        Random r = new Random();
+        return r.nextInt(right - left + 1) + left;
+    }
+    static void swap(int nums[], int left, int right) {
+        int tmp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = tmp;
+    }
+    public void quickSort(int[] nums, int left, int right) {
+        if (nums == null || nums.length == 0 || left < 0|| right >= nums.length) {
+            System.out.println("参数错误，排序失败");
+            return;
+        }
+        int pivot = random(left, right);
+        swap(nums, pivot, right);
+        int small = left - 1;//small小数的最后一位
+        for (int i = left; i < right; i++) {//nums[right]用来存储pivot所以不能等于
+            if (nums[i] < nums[pivot]) {
+                 small++;
+                 this.swap(i, small);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        
+    }
+}

@@ -1,0 +1,20 @@
+package first_maven;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {  
+    static void f(String s) {
+        s = "b";
+    }
+    static void ff(Integer i) {
+        i = 5;
+        System.out.println(i.hashCode());
+    }
+    public static void main(String[] args) {
+        Integer i = new Integer(10);
+        i = 1;
+        int s = 12;
+        System.out.println(i.getClass());
+    }
+}

@@ -1,0 +1,52 @@
+package first_maven;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Demo {
+    public static void main(String[] args) {
+        List<List<Integer>> arrays = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        List<Integer> cur;
+        int min;
+        int max;
+        List<Integer> maxList;
+        List<Integer> minList;
+        for (int i = 0; i < arrays.size(); i++) {
+            cur = arrays.get(i);
+            max = cur.get(cur.size() - 1);
+            min = cur.get(0);
+            list.add(max);
+            list.add(min);
+            cur = map.getOrDefault(max, new ArrayList<>());
+            cur.add(i);
+            map.put(max, cur);
+            map.put(min, map.getOrDefault(min, new ArrayList<>()).add(i));
+        }
+        Collections.sort(list);
+        max = list.size() - 1;
+        min = 0;//index
+        while (true) {
+            maxList = map.get(list.get(max));
+            minList = map.get(list.get(min));
+            for (int i: maxList) {
+                for (int j: minList) {
+                    if (i != j) {
+                        return list.get(max) - list.get(min);
+                    }
+                }
+            }
+            int next1 = list.get(max - 1) - list.get(min);
+            int next2 = list.get(max) - list.get(min - 1);
+            if (next1 > next2) {
+                max--;
+            } else {
+                min--;
+            }
+            
+        }
+    }
+}

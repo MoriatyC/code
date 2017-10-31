@@ -1,0 +1,23 @@
+package first_maven;
+
+import java.util.*;
+ class TreeNode {
+	      int val;
+	      TreeNode left;
+	     TreeNode right;
+	      TreeNode(int x) { val = x; }
+	  }
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = {4,3,2,7,8,2,3,1};
+		int com = (int) (Math.pow(2, nums.length)-1);
+		List<Integer> ret = new ArrayList();
+		for(int num:nums)
+		{
+			
+		}
+	}
+
+}

@@ -1,0 +1,27 @@
+package first_maven;
+
+import java.util.Scanner;
+public class Main {
+    static int[] getNext(String str) {
+        char[] chars = str.toCharArray();
+        int len = chars.length;
+        int[] next = new int[len + 1];
+        next[0] = -1;
+        next[1] = 0;
+        for (int i = 1; i < len; i++) {
+            int j = next[i];
+            while (j != -1 && chars[j] != chars[i]) {
+                j = next[j];
+            }
+            next[i + 1] = j + 1;
+        }
+        return next;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        int[] next = getNext(str);
+        for (int i: next)
+        System.out.println(i);
+    }
+}   

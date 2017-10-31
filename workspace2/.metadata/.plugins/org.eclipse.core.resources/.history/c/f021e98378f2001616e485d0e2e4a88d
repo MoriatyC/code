@@ -1,0 +1,18 @@
+package first_maven;
+
+import java.util.*;
+
+public class study {
+
+	public static void main(String[] args) {
+	 
+		 List<String> ret = new ArrayList<String>();
+		 ret.add("aa");
+		 ret.add("ss");
+		 int size = ret.size();
+        System.out.println(ret.toArray(new String[size]));
+		String a[] = new String[0];
+		System.out.println(a.length);
+	}
+
+}

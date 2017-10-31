@@ -1,0 +1,12 @@
+package os;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[]=new int[32] ;
+		for(int i=0;i<32;i++)
+		System.out.println(a[i]);
+	}
+
+}

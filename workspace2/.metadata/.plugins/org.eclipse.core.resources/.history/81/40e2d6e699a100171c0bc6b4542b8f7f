@@ -1,0 +1,50 @@
+package com.dlut.cmh.practice;
+
+import java.util.Random;
+
+public class Main {
+    static int randomIndex(int left, int right) {
+        Random r = new Random();
+        int i = r.nextInt(right - left + 1) + left;
+        return i;
+    }
+    static void swap(int nums[], int left, int right) {
+        int tmp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = tmp;
+    }
+    public static void quickSort(int[] nums, int left, int right) {
+        if (nums == null || nums.length == 0 || left < 0|| right >= nums.length) {
+            System.out.println("参数错误，排序失败");
+            return;
+        }
+        if (left > right) {
+            return;
+        }
+        int pivot = partition(nums, left, right);
+        quickSort(nums, left, pivot - 1);
+        quickSort(nums, pivot + 1, right);
+    }
+    public static int partition(int[] nums, int left, int right) {
+        int pivot = randomIndex(left, right);
+        swap(nums, pivot, right);
+        int small = left - 1;//small小数的最后一位
+        for (int i = left; i < right; i++) {//nums[right]用来存储pivot所以不能等于
+            if (nums[i] < nums[pivot]) {
+                 small++;
+                 if (i != small) {//优化，如果i == small说明还没遇到大的，所以不用交换
+                     swap(nums, i, right);
+                 }
+            }
+        }
+        swap(nums, ++small, right);
+        return small;
+    }
+    public static void main(String[] args) {
+        int[] nums = {3,4,612,1,2,4,53,16,27};
+        quickSort(nums, 0, nums.length - 1);
+        for (int i: nums) {
+            System.out.println(i);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+package keras2csv;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Test {
+    public static void main(String[] args) {
+        Map<Integer, Integer> map = new HashMap<>();
+       
+        map.put(1, 1);
+        map.put(3, 3);
+        map.put(4, 4);
+        map.put(0, 0);
+        map.put(2, 2);
+        System.out.println(map);
+        List<Entry<Integer, Integer>>  list = new ArrayList(map.entrySet());
+        Collections.sort(, c);
+    }
+}

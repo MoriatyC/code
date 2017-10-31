@@ -1,0 +1,25 @@
+package first_maven;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class Demo extends Exception{
+	public void f() throws Exception{
+		
+	}
+	public static void main(String[] args) throws IOException
+	{
+		Pattern pat =  Pattern.compile("123");
+		Matcher ma = pat.matcher("123123123");
+		ma.find();
+		ma.find();
+		ma.find();
+		System.out.println(ma.group());
+		
+		
+	}
+}
+
+
+ 
+
+

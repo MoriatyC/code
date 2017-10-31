@@ -1,0 +1,9 @@
+package first_maven;
+
+public class Demo  {
+    class a{}
+    
+  public static void main(String[] args) throws InterruptedException {
+      a aa = new a();
+  }
+}

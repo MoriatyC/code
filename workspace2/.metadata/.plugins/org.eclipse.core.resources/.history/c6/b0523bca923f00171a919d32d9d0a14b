@@ -1,0 +1,31 @@
+package first_maven;
+
+public class Demo  {
+    public static Object u = new Object();
+    static thread t1 = new thread("t1");
+    static thread t2 = new thread("t2");
+    public static class thread extends Thread {
+        String name;
+        public thread(String s) {
+            super.setName(name);
+        }
+        @Override
+        public void run() {
+            synchronized (u) {
+                System.err.println(getName());
+                thread.currentThread().suspend();
+            }
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        t1.start();
+        Thread.sleep(100);
+        t2.start();
+        t1.resume();
+        t2.resume();
+        t1.join();
+        t2.join();
+        
+    }
+}

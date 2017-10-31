@@ -1,0 +1,14 @@
+package com.DLUT.SIE.my_crawler;
+
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String url = "http://gs.dlut.edu.cn/";
+		String result = MyCrawler.getPage(url);
+		List<Model> list = MyCrawler.extract(result);
+		System.out.println(list);
+	}
+
+}

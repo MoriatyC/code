@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.DLUT.SIE.my_crawler.App.java&apos; to &apos;Model.java&apos;&#x0D;&#x0A;- Original project: &apos;my_crawler&apos;&#x0D;&#x0A;- Original element: &apos;com.DLUT.SIE.my_crawler.App.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.DLUT.SIE.my_crawler.Model.java&apos;" description="Rename compilation unit &apos;App.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.DLUT.SIE.my_crawler{App.java" name="Model.java" references="false" stamp="1492827540485" version="1.0"/>
+</session>

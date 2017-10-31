@@ -1,0 +1,21 @@
+package first_maven;
+
+abstract class Human {}
+class Man extends Human{
+    
+}
+
+public class Main {
+
+    public void f(Man guy) {
+        System.out.println("man");
+    }
+    public void f(Human gue) {
+        System.out.println("human");
+    }
+    public static void main(String[] args) {
+        Man man = new Man();
+        Main x = new Main();
+        x.f(man);
+    }
+}

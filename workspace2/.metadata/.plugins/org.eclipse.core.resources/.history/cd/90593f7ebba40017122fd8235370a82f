@@ -1,0 +1,19 @@
+package first_maven;
+
+interface Interface {
+    
+}
+class father{
+    
+}
+public class Main extends father implements Interface{
+
+    static void f(char f) {
+        System.out.println("char");
+    }
+
+    public static void main(String[] args) {
+        short c = 1;
+        f(c);
+    }
+}

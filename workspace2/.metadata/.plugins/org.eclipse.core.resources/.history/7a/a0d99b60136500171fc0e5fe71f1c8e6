@@ -1,0 +1,12 @@
+package first_maven;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Demo {
+    public static void main(String[] args) {
+        Map<String, String[]> tail = new HashMap<>();
+        tail.put("Year", new String[]{":00:00:00:00:00", "12:31:23:59:59"});
+        System.out.println(tail.get("Year")[0]);
+    }
+}

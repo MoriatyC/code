@@ -1,0 +1,11 @@
+package first_maven;
+
+import java.util.HashMap;
+import java.util.Map;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(1e7);
+        Map<Integer, Integer> sum = new HashMap<>();
+        sum.
+    }
+}

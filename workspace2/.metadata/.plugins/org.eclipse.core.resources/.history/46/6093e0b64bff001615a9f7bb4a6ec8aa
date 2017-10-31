@@ -1,0 +1,30 @@
+package first_maven;
+
+import java.util.*;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+public class Demo {
+
+	public static void main(String[] args) {
+		int[] nums = {10,21,3,5,4,2,1};
+		Integer[] index = new Integer[nums.length];
+		 for (int i = 0; i < nums.length; i++) {
+	            index[i] = i;
+	        }
+		 Arrays.sort(index, (a, b) -> (nums[b] - nums[a]));
+		 
+		 
+		 
+		 
+		 
+		 for (int i = 0; i < nums.length; i++) {
+	            System.out.println(index[i]);
+	        }
+	
+	}
+
+}

@@ -1,0 +1,21 @@
+package first_maven;
+import java.util.Stack;
+ class d{
+	 void f(){System.out.println(123);};
+}
+ abstract class d2 extends d{
+	 abstract void f();
+//	 void f2(){super.f();}
+ }
+public class Demo {
+
+	public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException
+	{
+		int a[] = new int[10];
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(0xfffd);
+		
+	}
+}
+
+

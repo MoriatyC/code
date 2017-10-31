@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TypeCounter.java&apos; to &apos;TIJ4/util/net.mindview.util&apos;&#x0D;&#x0A;- Original project: &apos;TIJ4&apos;&#x0D;&#x0A;- Destination element: &apos;TIJ4/util/net.mindview.util&apos;&#x0D;&#x0A;- Original element: &apos;TypeCounter.java&apos;" description="Copy compilation unit" destination="/util&lt;net.mindview.util" element1="/util&lt;{TypeCounter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1491891606248" units="1" version="1.0"/>
+</session>

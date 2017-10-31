@@ -1,0 +1,27 @@
+package first_maven;
+import java.util.Random;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.IntStream;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+   class ListNode {
+	      int val;
+	     ListNode next;
+	      ListNode(int x) { val = x; }
+	 }
+public class Demo {
+
+	public static void main(String[] args) {
+		System.out.println(1^2);
+		   
+	}
+
+}
+
+
+ 

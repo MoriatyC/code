@@ -1,0 +1,20 @@
+package first_maven;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Demo {
+
+    public static void main(String[] args) throws InterruptedException {
+        List<List<Integer>> wall = null;
+        Map<Integer, Integer> map = new HashMap<>();
+        int cur = 0;
+        for (List<Integer> row: wall) {
+            for (int brick: row) {
+                cur += brick;
+                map.put(cur, map.getOrDefault(cur, 0) + 1);
+            }
+        }
+    }
+}

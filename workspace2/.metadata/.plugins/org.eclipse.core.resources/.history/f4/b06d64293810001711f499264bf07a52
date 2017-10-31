@@ -1,0 +1,33 @@
+package first_maven;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.IntStream;
+
+import javax.management.Query;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+   class ListNode {
+	      int val;
+	     ListNode next;
+	      ListNode(int x) { val = x; }
+	 }
+public class Demo {
+
+	public static void main(String[] args) {
+		TreeNode[] t = new TreeNode[5];
+		System.out.println(t[1]);
+		
+
+				
+		
+		   
+	}
+
+}
+
+
+ 

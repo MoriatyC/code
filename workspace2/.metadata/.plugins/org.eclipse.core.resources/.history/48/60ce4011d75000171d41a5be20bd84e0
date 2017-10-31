@@ -1,0 +1,96 @@
+package keras2csv;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.LineNumberReader;
+
+import com.opencsv.CSVWriter;
+
+/**
+ * Java program to convert the output of Keras. Into a CSV file to be used for plotting.
+ * @author rparundekar
+ *
+ */
+public class Keras2CSV {
+
+	/**
+	 * The main function.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String input = "D:\\tmp\\input.txt";
+		String output = "D:\\tmp\\output.csv";
+		System.out.println("Trying to read Keras output");
+		try {
+			//Create reader and variable to read each line. 
+			LineNumberReader lineNumberReader=new LineNumberReader(new FileReader(new File(input)));
+			String line="";
+			
+			//The variables that remember the data
+			int epoch=-1;
+			String previousLine="";
+			
+			//The variables for writing to the CSV
+			boolean headerFlag=false;
+			CSVWriter csvWriter=new CSVWriter(new FileWriter(new File(output)),',', CSVWriter.NO_ESCAPE_CHARACTER);
+			
+			//Read each line from the output
+			while((line=lineNumberReader.readLine())!=null){
+			    System.out.println(line);
+				line = line.trim();//Trim whitespaces
+				//If the line starts with epoch, then for the previous epoch, 
+				//use the line above this for the row generation 
+				if(line.startsWith("Epoch"))
+				{
+					//Only if there was a previous epoch, for that epoch
+					if(epoch!=-1){
+						//Split the previous line
+						String split[] = previousLine.split(" - ");
+						
+						//If the header was not put in the CSV, then do so
+						if(headerFlag==false){
+							String header[]=null;
+							header=new String[split.length];
+							header[0]="Epoch";
+							header[1]="Time";
+							for(int j=2;j<split.length;j++){
+								String keyAndValue[] = split[j].split(":");
+								header[j] = keyAndValue[0].trim();
+							}
+							csvWriter.writeNext(header);
+							headerFlag=true;
+						}
+						
+						//Create the row by splitting the line previous to the epoch line 
+						String[] row=new String[split.length];
+						row[0]="" + epoch;
+						for(int j=1;j<split.length;j++){
+							String keyAndValue[] = split[j].split(":");
+							if(keyAndValue.length==1)
+								row[j] = keyAndValue[0].trim();
+							else
+								row[j] = keyAndValue[1].trim();
+						}
+						//Write to csv file
+						csvWriter.writeNext(row);
+						csvWriter.flush();
+					}
+					//Update the epoch variable storing the previous line
+					epoch = Integer.parseInt(line.substring(line.indexOf(" ")+1,line.indexOf("/")));
+				}
+				//Keep track of the previous line
+				previousLine=line;
+			}
+			//Close the file reader and writers
+			csvWriter.close();
+			lineNumberReader.close();
+			System.out.println("Done");
+		} catch (IOException e) {
+			//Error in IO
+			System.err.println("Error in reading file: " + e.getMessage());
+		}
+	}
+
+}

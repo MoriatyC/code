@@ -1,0 +1,21 @@
+package first_maven;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.IntStream;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+public class Demo {
+	public static void main(String[] args) {
+		String s = "asdfsfas";
+		Map<Character,Integer> map = new HashMap();
+		s.toCharArray()
+		char a = 122;
+		System.out.println(a);
+	}
+
+}

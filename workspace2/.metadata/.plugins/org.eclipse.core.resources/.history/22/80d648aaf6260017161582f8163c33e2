@@ -1,0 +1,68 @@
+package com.DLUT.SIE.my_crawler;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class App 
+{
+	public static String getPage(String url){
+		url = "http://gs.dlut.edu.cn/";
+        String result = "";
+        BufferedReader in = null;
+        	try {
+				URL realUrl = new URL(url);
+				URLConnection conn = realUrl.openConnection();
+				conn.connect();
+				in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				String line;
+				while((line = in.readLine()) != null)
+				{
+					result += line + "\n";
+				}
+			} catch (Exception e) {
+				System.out.println("请求失败" + e);
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+        	finally{
+        		if(in != null)
+					try {
+						in.close();
+					} catch (IOException e) {
+						System.out.println("关闭失败");
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+        	}
+        	return result;
+
+	}
+	public String extract(String resutlt, String regex){
+		Pattern pat = Pattern.compile(regex);
+        Matcher matcher = pat.matcher(resutlt);
+        if(matcher.find())
+        {
+        	int index = matcher.groupCount();
+        	resutlt = matcher.group(index);
+        }
+        return resutlt;
+	}
+    public static void main( String[] args )
+    {
+        String url = "http://gs.dlut.edu.cn/";
+        String result = getPage(url);
+        result = extract(result, "<img(\\s)*src=\"(.+?)\"");
+        Pattern pat = Pattern.compile();
+        Matcher matcher = pat.matcher(resutl);
+        if(matcher.find())
+        {
+        	int index = matcher.groupCount();
+        	String pic = matcher.group(index);
+        	System.out.println(pic);
+        }
+    }
+}

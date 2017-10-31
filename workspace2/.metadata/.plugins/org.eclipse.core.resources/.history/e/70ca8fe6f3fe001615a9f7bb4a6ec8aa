@@ -1,0 +1,22 @@
+package first_maven;
+
+import java.util.*;
+ class TreeNode {
+	      int val;
+	    TreeNode left;
+	    TreeNode right;
+	     TreeNode(int x) { val = x; }
+ }
+public class Demo {
+
+	public static void main(String[] args) {
+		int[] a = {0, 1, 0, 3, 12};
+		String s = "" + 1;
+		System.out.println(s);
+		List<Integer> list =  new ArrayList<Integer>();
+		Map<Integer,Integer> map  = new HashMap<Integer,Integer>();
+		list.add(1);
+		System.out.println(list[0]);
+	}
+
+}

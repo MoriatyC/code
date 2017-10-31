@@ -1,0 +1,17 @@
+package com.dlut.cmh.sie;
+import java.nio.file.Paths;
+
+import com.dlut.cmh.sie.*;
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        
+        String absolute = System.getProperty("user.dir") + "\\src\\main\\resources\\inception5h";
+        Paths.get(uri)
+    }
+}

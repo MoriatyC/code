@@ -1,0 +1,11 @@
+package first_maven;
+class Test {
+    public Test() {
+        System.out.println(123);
+    }
+}
+public class Main {  
+  Test t = new Test();
+    public static void main(String[] args) {
+    }
+}

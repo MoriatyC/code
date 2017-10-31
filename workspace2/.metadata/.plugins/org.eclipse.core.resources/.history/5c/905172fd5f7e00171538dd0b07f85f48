@@ -1,0 +1,15 @@
+package first_maven;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+
+public class Demo {
+    static {
+        System.out.println("静态语句块");
+    }
+    public static void main(String[] args) {
+        Demo x = new Demo();
+        Demo xx = new Demo();
+    }
+}

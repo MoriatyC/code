@@ -1,0 +1,20 @@
+package first_maven;
+
+public class Demo  {
+  static boolean ready;
+static int number;
+static class thread extends Thread {
+    public void run() {
+        while (!ready) ;
+            System.out.println(number);
+        
+    }
+}
+  public static void main(String[] args) throws InterruptedException {
+      new thread().start();
+      Thread.sleep(1000);
+      number = 42;
+      ready = true;
+     Thread.sleep(10000);
+  }
+}

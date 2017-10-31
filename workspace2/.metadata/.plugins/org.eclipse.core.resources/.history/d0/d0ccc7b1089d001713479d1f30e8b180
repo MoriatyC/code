@@ -1,0 +1,20 @@
+package first_maven;
+
+public class Main {  
+    private String baseName = "base";
+    public Main() {
+        callName();
+    }
+    public void callName() {
+        System.out.println(baseName);
+    }
+    static class Sub extends Main {
+        private String baseName = "sub";
+        public void callName() {
+            System.out.println(baseName);
+        }
+    }
+    public static void main(String[] args) {
+        Base b = new Sub();
+    }
+}

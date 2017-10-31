@@ -1,0 +1,16 @@
+package os;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	String s="AAA";
+	char[] a = s.toCharArray();
+	int ret = 'A';
+	int len = a.length;
+	ret = 26*len+a[len-1];
+	System.out.println();
+	
+	}
+
+}

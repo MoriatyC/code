@@ -1,0 +1,32 @@
+package first_maven;
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int Q = sc.nextInt();
+        int[] A = new int[55];
+        int[][] dp = new int[1005][1005];//nm;
+        int[][] level = new int[1005][1005];//nm
+        int canPass;
+        while(Q-- > 0)
+        {
+            int N = sc.nextInt();//总关卡
+            int M = sc.nextInt();//答题机会
+            int S = sc.nextInt();//right
+            int T = sc.nextInt();//wrong
+            int canPass = 0;
+            for(int i = 1; i <= N; i++)
+            {
+            	for(int j = 0; j <= M; j++)
+            		dp[i][j] = Integer.MAX_VALUE;
+            }
+            for(int i = 1; i <= N; i++)
+            {
+                A[i] = sc.nextInt();
+                canPass = (int)Math.ceil(1.0 * A[i] / S);
+            }
+            
+        }
+    }
+}
