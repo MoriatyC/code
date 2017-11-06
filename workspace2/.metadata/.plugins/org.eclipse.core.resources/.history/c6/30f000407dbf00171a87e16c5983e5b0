@@ -1,0 +1,32 @@
+package com.dlut.cmh.practice;
+
+import java.util.Random;
+
+public class Main {
+    public static int partion(int[] arr, int left, int right) {
+        if (left >= right) {
+            return left;
+        }
+        Random random = new Random();
+        int pivot = random.nextInt(right - left + 1) + left;
+        
+    }
+    public static void swap(int[] arr, int a, int b) {
+        int tmp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = tmp;
+    }
+    public static void quickSort(int[] arr, int left, int right) {
+        if (arr == null || arr.length == 0 || left >= right) {
+            return;
+        }
+        int pivot = partion(arr, left, right);
+        quickSort(arr, left, pivot - 1);
+        quickSort(arr, pivot + 1, right);
+    }
+    public static void main(String[] args) {
+        String s = "asd";
+  
+        int a = 0, b = 0;
+    }
+}

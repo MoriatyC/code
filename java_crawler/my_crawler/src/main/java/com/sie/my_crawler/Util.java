@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Util {
-	static File file;
+	    public static File file;
 		public static boolean createNewFile(String filePath){
 			boolean isSuccess = false;
 			String filePathTurn = filePath.replaceAll("\\\\","/");

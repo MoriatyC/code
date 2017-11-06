@@ -39,6 +39,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\prometheus-linuxsys-exporter-version2.0"/>
 			<item value="D:\KerasWorkshop"/>
 			<item value="C:\Users\cmh\Desktop\dl4j-examples"/>
 			<item value="C:\Users\cmh\Desktop\java"/>
