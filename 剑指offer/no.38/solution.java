@@ -33,12 +33,13 @@ public class Main{
             if (0 == mid || array[mid - 1] != k) {
                 return mid;
             }
-            return findFirst(array, k, left, mid - 1);
+            right = mid - 1;
+        } else if (array[mid] > k) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
         }
-        if (array[mid] > k) {
-            return findFirst(array, k, left, mid - 1);
-        }
-        return findFirst(array, k, mid + 1, right);
+        return findFirst(array, k, left, right);
     }
     public static int findLast(int[] array, int k, int left, int right) {
         if (left > right) {
@@ -49,12 +50,13 @@ public class Main{
             if (array.length - 1 == mid || array[mid + 1] != k) {
                 return mid;
             }
-            return findLast(array, k, mid + 1, right);
+            left = mid + 1;
+        } else if (array[mid] > k) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
         }
-        if (array[mid] > k) {
-            return findLast(array, k, left, mid - 1);
-        }
-        return findLast(array, k, mid + 1, right);
+        return findLast(array, k, left, right);
     }
     public static void main(String[] args) throws ParseException {
         int[] arr = {3,3,3,3,4,5};
