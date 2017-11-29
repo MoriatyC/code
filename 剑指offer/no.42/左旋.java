@@ -9,7 +9,7 @@ public class Solution {
         }
     }
     public String LeftRotateString(String str,int n) {
-        if (str == null || str.length() == 0 || n < 0) {
+        if (str == null || str.length() == 0 || n < 0 || n > str.length()) {
             return str;
         }
         char[] arr = str.toCharArray();
