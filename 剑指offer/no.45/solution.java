@@ -1,0 +1,18 @@
+import java.util.LinkedList;
+public class Solution {
+    public int LastRemaining_Solution(int n, int m) {
+        if (n <= 0 || m <= 0) {
+            return -1;
+        }
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 0; i < n; i++) {
+            list.add(i);
+        }
+        int cur = 0;
+        while (list.size() > 1) {
+            cur = (cur + m - 1) % list.size();//直接加上m-1再取模，这样就能直接算出在环形链表中的位置
+            list.remove(cur);
+        }
+        return list.get(0);
+    }
+}
