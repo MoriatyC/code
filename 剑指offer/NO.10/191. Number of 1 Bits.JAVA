@@ -6,6 +6,6 @@ public class Solution {
             ret++;
             n = n & (n - 1);
         }
-        return ret;
+        return ret;12312312321321123
     }
 }
