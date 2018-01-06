@@ -1,0 +1,106 @@
+package first_maven;
+
+import java.text.ParseException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main{
+    public static int GetNumberOfK(int [] array , int k) {
+        if (array == null || array.length == 0) {
+            return 0;
+        } 
+        int first = findFirst(array, k, 0, array.length- 1);
+        if (first == -1) {
+            return 0;
+        }
+        int last = findLast(array, k, 0, array.length - 1);
+        return last - first + 1;
+    }
+    public static int findFirst(int[] array, int k, int left, int right) {
+        if (left > right) {
+            return -1;
+        }
+        int mid = left + (right - left) / 2;
+        if (array[mid] == k) {
+            if (0 == mid || array[mid - 1] != k) {
+                return mid;
+            }
+            right = mid - 1;
+        } else if (array[mid] > k) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+        return findFirst(array, k, left, right);
+    }
+    public static int findLast(int[] array, int k, int left, int right) {
+        if (left > right) {
+            return 0;
+        }
+        int mid = left + (right - left) / 2;
+        if (array[mid] == k) {
+            if (array.length - 1 == mid || array[mid + 1] != k) {
+                return mid;
+            }
+            left = mid + 1;
+        } else if (array[mid] > k) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+        return findLast(array, k, left, right);
+    }
+    public static void helper(int n, int[] sum, Map<Integer, Integer> map) {
+        if (n < 0) {
+            return;
+        }
+        if (n == 0) {
+            map.put(sum[0], map.getOrDefault(sum[0], 0) + 1);
+        }
+        for (int i = 1; i <= 6; i++) {
+            sum[0] += i;
+            helper(n - 1, sum, map);
+            sum[0] -= i;
+        }
+        
+    }
+    public static void solution(int n) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] sum = {0};
+        helper(n, sum, map);
+        double x = Math.pow(6, n);
+        for (int i : map.keySet()) {
+            System.out.println(i + "  " + map.get(i) / x);
+        }
+    }
+    public static void f(int n) {
+        if (n < 0) {
+            return;
+        }
+        int[][] arr = new int[2][6 * n +1];
+        for (int i = 1; i <= 6; i++) {
+            arr[0][i] = 1;
+        }
+        int flag = 0;
+        for (int i = 2; i <= n; i++) {
+            for (int j = 0; j < i; j++) {
+                arr[1 - flag][j] = 0;
+            }
+            for (int j = i; j <= 6 * i; j++) {//j 下一次数组的可能值
+                arr[1 - flag][j] = 0;
+                for (int k = 1; j >= k && k <= 6; k++) {
+                    arr[1 - flag][j] += arr[flag][j - k];
+                }
+            }
+            
+            flag = 1 - flag;
+        }
+        for (int i = n; i <= 6 * n; i++) {
+            System.out.println(arr[flag][i] / Math.pow(6, n));
+        }
+    }
+    public static void main(String[] args) throws ParseException {
+       f(11);
+    }
+}

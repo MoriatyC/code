@@ -1,0 +1,15 @@
+package threadpractice;
+
+public class ThreadDemo {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> System.out.println("In Java8!"));
+        t.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        t.interrupt();
+    }
+}

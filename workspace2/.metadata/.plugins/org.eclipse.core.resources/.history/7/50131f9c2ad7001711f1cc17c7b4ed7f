@@ -1,0 +1,17 @@
+package first_maven;
+
+import java.util.Arrays;
+
+public class Main {
+    static int test;
+    boolean final() {
+        test++;
+        return true;
+    }
+    public static void main(String[] args)   {
+       test = 0;
+       if (final() | final() | fianl()) 
+           test++;
+       System.out.println(test);
+    }
+}

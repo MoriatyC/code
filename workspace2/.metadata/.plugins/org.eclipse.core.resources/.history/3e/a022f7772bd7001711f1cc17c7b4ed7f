@@ -1,0 +1,15 @@
+package first_maven;
+
+import java.util.Arrays;
+
+public class Main {
+    int i;
+    Main m;
+    boolean b;
+    byte bt;
+    float ft;
+    public static void main(String[] args)   {
+        Test t = new Test();
+        System.out.println(t.i);
+    }
+}

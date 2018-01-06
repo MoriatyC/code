@@ -1,0 +1,16 @@
+package first_maven;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main   {
+    public  boolean isNumeric(char[] str) {
+        String s = String.valueOf(str);
+        return s.matches("[\\+-]?\\d*\\.?\\d+([eE]?[+-]?\\d+)*");
+    }
+    public static void main(String args[]) {
+//        string.matches("[\\+-]?[0-9]*(\\.[0-9]*)?([eE][\\+-]?[0-9]+)?");
+        Main m = new Main();
+        System.out.println(m.isNumeric("50.0".toCharArray()));
+    }
+}

@@ -1,0 +1,50 @@
+package first_maven;
+
+import java.util.Deque;
+import java.util.LinkedList;
+
+public class Main   {
+    LinkedList<Integer> list = new LinkedList<>();
+    public void Insert(Integer num) {
+        boolean finish = false;
+        for (int i = 0; i <  list.size(); i++) {
+            if (num < list.get(i)) {
+                list.add(i, num);
+                finish = true;
+            }
+        }
+        if (!finish) {
+            list.add(num);
+        }
+    }
+
+    public Double GetMedian() {
+        int size = list.size();
+        if (size % 2 == 0) {
+            return (double)(list.get(size / 2) + list.get(size / 2 - 1)) / 2;
+        }
+        return (double)list.get(size / 2);
+    }
+    public static void main(String args[]) {
+        Main m = new Main();
+        m.Insert(5);
+        System.out.println(m.GetMedian());
+        m.Insert(2);
+        System.out.println(m.GetMedian());
+        m.Insert(3);
+        System.out.println(m.GetMedian());
+        m.Insert(4);
+        System.out.println(m.GetMedian());
+        m.Insert(1);
+        System.out.println(m.GetMedian());
+        m.Insert(6);
+        System.out.println(m.GetMedian());
+        m.Insert(7);
+        System.out.println(m.GetMedian());
+        m.Insert(0);
+        System.out.println(m.GetMedian());
+        m.Insert(8);
+        System.out.println(m.GetMedian());
+    }
+    
+}

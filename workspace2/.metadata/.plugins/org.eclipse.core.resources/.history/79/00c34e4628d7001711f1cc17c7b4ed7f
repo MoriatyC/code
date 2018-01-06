@@ -1,0 +1,22 @@
+package first_maven;
+
+import java.util.Arrays;
+class a {
+    void f() {
+        System.out.println("a");
+    }
+}
+public class Main{
+        static int count;
+        static int sum;
+        public Main() {
+            System.out.println("heh");
+            count++;
+            sum += count;
+        }
+    
+    public static void main(String[] args)   {
+        
+        Main[] arr = new Main[5];
+    }
+}

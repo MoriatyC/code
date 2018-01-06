@@ -1,0 +1,38 @@
+package first_maven;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main   {
+    public static ListNode deleteDuplication(ListNode pHead)
+    {
+        if (pHead == null) {
+            return null;
+        }
+        ListNode fade = new ListNode(0);
+        fade.next = pHead;
+        ListNode pre = fade;
+        ListNode cur = fade.next;
+        while (cur != null && cur.next != null) {
+            if (cur.val != cur.next.val) {
+                pre = cur;
+                cur = cur.next;
+            } else {
+                int tmp = cur.val;
+                while (cur != null && tmp == cur.val) {
+                        cur = cur.next;
+                }
+                pre.next = cur;
+            }
+        }
+        return fade.next;
+    }
+    public static void main(String args[]) {
+        String s1 = "RH04-3456-01";
+        Pattern p = Pattern.compile("(\\S+-\\S+)-\\S+");
+        Matcher m  = p.matcher(s1);
+        if (m.find())
+            System.out.println(m.group(1));
+        System.out.println("finish");
+    }
+}

@@ -1,0 +1,18 @@
+package first_maven;
+
+import java.util.Arrays;
+class a {
+    void f() {
+        System.out.println("a");
+    }
+}
+public class Main extends a{
+    void f() {
+        System.out.println("b");
+    }
+    
+    public static void main(String[] args)   {
+        
+        Main[] arr = new Main[5];
+    }
+}

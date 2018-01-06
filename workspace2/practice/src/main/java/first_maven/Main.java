@@ -1,37 +1,57 @@
 package first_maven;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
 
-public class Main{
 
-    public static void combination(String s) {
-        List<String> ret = new ArrayList<>();
-        for (int i = 1; i <= s.length(); i++) {
-            combination(s, i, ret);
+public class Main {
+    public int movingCount(int threshold, int rows, int cols)
+    {
+        if (threshold < 0 || rows <= 0 || cols <= 0) {
+            return 0;
+        }
+        boolean[][] visited = new boolean[rows][cols];
+        int row = 0;
+        int col = 0;
+        int[] ret = {0};
+        backtracking(col, row, cols, rows, threshold, visited, ret);
+        return ret[0];
+    }
+    public void backtracking(int col, int row, int cols, int rows, int threshold, boolean[][] visited, int[] ret) {
+        if (col < 0 || row < 0 || col >= cols || row >= rows || visited[row][col]) {
+            return;
+        }
+        if (canPass(col, row, threshold)) {
+            visited[row][col] = true;
+            ret[0]++;
+            backtracking(col, row + 1, cols, rows, threshold, visited, ret);
+            backtracking(col, row - 1, cols, rows, threshold, visited, ret);
+            backtracking(col + 1, row, cols, rows, threshold, visited, ret);
+            backtracking(col - 1, row, cols, rows, threshold, visited, ret);
         }
     }
-    public static void combination(String s, int m, List<String> result) {//从字符串中找长度为m的组合
-        
-        // 如果m==0，则递归结束。输出当前结果  
-        if (m == 0) {  
-            for (int i = 0; i < result.size(); i++) {  
-                System.out.print(result.get(i));  
-            }  
-            System.out.println();  
-            return;  
-        }  
-  
-        if (s.length() != 0) {  
-            // 选择当前元素  
-            result.add(s.charAt(0) + "");  
-            combination(s.substring(1, s.length()), m - 1, result);  
-            result.remove(result.size() - 1);//注意：递归出栈时需要移除List中的字符组合  
-            // 不选当前元素  
-            combination(s.substring(1, s.length()), m, result);  
-        }  
-    }  
+    public boolean canPass(int col, int row, int threshold) {
+        int sum = 0;
+        while (col > 0) {
+            sum += col % 10;
+            if (sum > threshold) {
+                return false;
+            }
+            col /= 10;
+        }
+        while (row > 0) {
+            sum += row % 10;
+            if (sum > threshold) {
+                return false;
+            }
+            row /= 10;
+        }
+        return true;
+    }
     public static void main(String[] args) {
-        combination("abcd");
+        Main m = new Main();
+        System.out.println(m.movingCount(5, 10, 10));
+        
     }
 }

@@ -1,7 +1,7 @@
 package first_maven;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 class ListNode {
     int val;
@@ -33,6 +33,35 @@ public class ListMain {
             cur = next;
         }
         return last;
+    }
+    public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
+        Set<ListNode> set1 = new HashSet<>();
+        Set<ListNode> set2 = new HashSet<>();
+        while (pHead1 != null && pHead2 != null) {
+            if (set1.contains(pHead2)) {
+                return pHead2;
+            }
+            if (set2.contains(pHead1)) {
+                return pHead1;
+            }
+            set1.add(pHead1);
+            set2.add(pHead2);
+            pHead1 = pHead1.next;
+            pHead2 = pHead2.next;
+        }
+        while (pHead1 != null) {
+            if (set2.contains(pHead1)) {
+                return pHead1;
+            }
+            pHead1 = pHead1.next;
+        }
+        while (pHead2 != null) {
+            if (set1.contains(pHead2)) {
+                return pHead2;
+            }
+            pHead2 = pHead2.next;
+        }
+        return null;
     }
     
     public static void main(String[] args) {

@@ -1,0 +1,50 @@
+package first_maven;
+
+import java.util.Arrays;
+
+public class Main{
+    static class Node {
+        int val;
+        Node next;
+        Node last;
+        public Node(int val) {
+            this.val = val;
+        }
+    }
+    public static int LastRemaining_Solution(int n, int m) {
+        if (n <= 0 || m <=0) {
+            return 0;
+        }
+        Node root = new Node(1);
+        Node head = root;
+        Node last = root;
+        for (int i = 2; i <= n; i++) {
+            Node cur = new Node(i);
+            root.next = cur;
+            root = cur;
+            root.last = last;
+            last = root;
+        }
+        root.next = head;
+        root = head;
+        root.last = last;
+        int count = 1;
+        while (root.next != root) {
+            if (count == m) {
+                Node tmp = root.last;
+                root.last.next = root.next;
+                root.next.last = tmp;
+                count = 0;
+            }
+            root = root.next;
+            count++;
+        }
+        return root.val - 1;
+    }
+    public static void main(String[] args)   {
+        int[] a = {1,3,0,7,0};
+        Arrays.sort(a);
+        System.out.println(LastRemaining_Solution(5,3));
+        
+    }
+}

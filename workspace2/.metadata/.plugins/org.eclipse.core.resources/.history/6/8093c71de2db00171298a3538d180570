@@ -1,0 +1,40 @@
+package first_maven;
+
+import java.util.Arrays;
+public class Main   {
+    public int count;
+    public int[] arr;
+    public Solution() {
+        count = 0;
+        arr = new int[128];
+    }
+    public void Insert(char ch)
+    {
+        this.count++;
+        if (arr[ch] == 0) {
+            arr[ch] = count;
+        } else if (arr[ch] > 0) {
+            arr[ch] = -1;
+        }
+    }
+  //return the first appearence once char in current stringstream
+    public char FirstAppearingOnce()
+    {
+        int min = 129;
+        for (int i : arr) {
+            if (i > 0) {
+                min = Math.min(min, i);
+            }
+        }
+        char ret = (char)min;
+        return min == 129 ? '#' : ret;
+    }
+ 
+    public static void main(String args[]) {
+       char[] arr = {'a','b'};
+       char ret = 1;
+       int[] a = new int[108];
+       a[arr[0]] = 10;
+       System.out.println(a[arr[0]]);
+    }
+}

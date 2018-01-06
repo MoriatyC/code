@@ -1,0 +1,32 @@
+package first_maven;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main   {
+    public static ListNode deleteDuplication(ListNode pHead)
+    {
+        if (pHead == null) {
+            return null;
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        ListNode fade = new ListNode(0);
+        fade.next = pHead;
+        while (pHead != null) {
+            map.put(fade.val, (map.getOrDefault(fade.val, 0) + 1));
+            pHead = pHead.next;
+        }
+        ListNode pre = fade;
+        ListNode cur = fade.next;
+        while (cur != null) {
+            if (map.get(cur.val) > 1) {
+                pre.next = cur.next;
+                cur = cur.next;
+            }
+        }
+        return fade.next;
+    }
+    public static void main(String args[]) {
+        
+    }
+}

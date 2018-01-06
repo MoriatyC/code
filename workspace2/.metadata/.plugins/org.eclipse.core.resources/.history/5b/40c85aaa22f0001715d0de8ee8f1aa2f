@@ -1,0 +1,20 @@
+package first_maven;
+
+class thread1 implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("runnable");
+    }
+}
+
+public class Main   extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Thread");
+    }
+    public static void main(String args[]) {
+       Main m = new Main();
+       Thread t1 = new Thread(m);
+    }
+    
+}

@@ -1,0 +1,15 @@
+package first_maven;
+
+import java.util.Arrays;
+class A {
+    protected int a;
+}
+public class Main  extends A{
+    void f() {
+        a = 10;
+    }
+    public static void main(String[] args){
+        Main x = new Main();
+        x.a = 102;
+    }
+}

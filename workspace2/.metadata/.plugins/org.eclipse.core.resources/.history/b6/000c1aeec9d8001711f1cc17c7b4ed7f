@@ -1,0 +1,26 @@
+package first_maven;
+
+import java.util.Arrays;
+
+
+public class Main {
+    public static int StrToInt(String str) {
+        str = str.trim();
+        int ret = 0;
+        char[] arr = str.toCharArray();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] <= 57 || arr[i] >= 48) {
+                int tmp = arr[i] - 48;
+                ret = ret * 10 + tmp;
+            } else {
+                return 0;
+            }
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        int a = '+';
+        System.out.println(a);
+        System.out.println(StrToInt("+123"));
+    }
+}

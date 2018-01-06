@@ -1,0 +1,25 @@
+package first_maven;
+
+import java.util.Arrays;
+
+public class Main {
+    int i;
+    Main m;
+    boolean b;
+    byte bt;
+    float ft;
+    double df;
+    char c;
+    public static void main(String[] args)   {
+        char c = '\u0000';
+        System.out.println(c);
+        Main t = new Main();
+        System.out.println(t.i);
+        System.out.println(t.m);
+        System.out.println(t.b);
+        System.out.println(t.bt);
+        System.out.println(t.ft);
+        System.out.println(t.df);
+        System.out.println(t.c);
+    }
+}

@@ -1,0 +1,106 @@
+package first_maven;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class TreeNode {
+     int val;
+     TreeNode left;
+     TreeNode right;
+     TreeNode(int x) { val = x; }
+ }
+
+public class TreeDemo {
+    void preDfs(TreeNode pRoot, List<Integer> list) {
+        if (pRoot == null) {
+            return ;
+        }
+        if (pRoot.left != null && pRoot.right != null) {
+            preDfs(pRoot.left, list);
+            list.add(pRoot.val);
+            preDfs(pRoot.right, list);
+        }   else {
+            if (pRoot.left != null) {
+                preDfs(pRoot.left, list);
+                list.add(pRoot.val);
+                list.add(Integer.MAX_VALUE);
+            } else if (pRoot.right != null) {
+                list.add(Integer.MAX_VALUE);
+                list.add(pRoot.val);
+                preDfs(pRoot.right, list);
+            } else {
+                list.add(pRoot.val);
+            }
+        }
+    }
+    void rpreDfs(TreeNode pRoot, List<Integer> list) {
+        if (pRoot == null) {
+            return ;
+        }
+        if (pRoot.left != null && pRoot.right != null) {
+            rpreDfs(pRoot.right, list);
+            list.add(pRoot.val);
+            rpreDfs(pRoot.left, list);
+        }   else {
+            if (pRoot.left != null) {
+                list.add(Integer.MAX_VALUE);
+                list.add(pRoot.val);
+                rpreDfs(pRoot.left, list);
+            } else if (pRoot.right != null) {
+                rpreDfs(pRoot.right, list);
+                list.add(pRoot.val);
+                list.add(Integer.MAX_VALUE);
+            } else {
+                list.add(pRoot.val);
+            }
+        }
+    }
+    boolean isSymmetrical(TreeNode pRoot)
+    {
+        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        preDfs(pRoot, list1);
+        rpreDfs(pRoot, list2);
+        for (int i = 0; i < list1.size(); i++) {
+            System.out.println(list1.get(i) + "            " + list2.get(i));
+            if (!list1.get(i).equals(list2.get(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+    static void f(List<Integer> list) {
+        list.add(1);
+    }
+    static void ff(List<Integer> list) {
+        list.add(1);
+    }
+    public static void main(String[] args) {
+        TreeNode a1 = new TreeNode(8);
+        TreeNode a2 = new TreeNode(6);
+        TreeNode a3 = new TreeNode(6);
+        TreeNode a4 = new TreeNode(5);
+        TreeNode a5 = new TreeNode(7);
+        TreeNode a6 = new TreeNode(7);
+        TreeNode a7 = new TreeNode(5);
+        a1.left = a2;
+        a1.right = a3;
+        a2.left = a4;
+        a2.right = a5;
+        a3.left = a6;
+        a3.right = a7;
+        TreeDemo t = new TreeDemo();
+        System.out.println(t.isSymmetrical(a1));
+//        Integer a = new Integer(1);
+//        Integer b = new Integer(1);
+//        System.out.println(a.equals(b));
+//        List<Integer> list1 = new ArrayList<>();
+//        List<Integer> list2 = new ArrayList<>();
+//        f(list1);
+//        ff(list2);
+//        System.out.println(list1.get(0) == list2.get(0));
+//        System.out.println(list1.get(0).equals(list2.get(0)));
+       
+    }
+
+}

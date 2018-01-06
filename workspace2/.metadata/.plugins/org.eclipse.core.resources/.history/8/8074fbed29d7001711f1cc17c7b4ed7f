@@ -1,0 +1,14 @@
+package first_maven;
+
+import java.util.Arrays;
+class a {
+    void f() {
+        System.out.println("a");
+    }
+}
+public class Main extends a{
+    String args[] = {"1"};
+    public static void main(String[] args)   {
+        System.out.println(args.length);
+    }
+}

@@ -1,6 +1,9 @@
 package com.dlut.cmh.practice;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Random;
 
@@ -56,6 +59,14 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-        System.out.println(Math.log10(101));
+        List<String> list = new ArrayList<>();
+        Collections.sort(list, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                String s1 = o1 + o2;
+                String s2 = o2 + o1;
+                return Integer.valueOf(s2) - Integer.valueOf(s1);
+            }
+        });
     }
 }

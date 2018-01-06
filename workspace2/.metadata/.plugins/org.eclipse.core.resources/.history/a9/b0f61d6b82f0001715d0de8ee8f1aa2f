@@ -1,0 +1,16 @@
+package first_maven;
+
+import java.util.PriorityQueue;
+
+
+public class Main {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> p = new PriorityQueue<>();
+        p.offer(5);
+        p.offer(3);
+        p.offer(6);
+        p.offer(2);
+        p.offer(8);
+        System.out.println(p.peek());
+    }
+}

@@ -1,0 +1,42 @@
+package first_maven;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+
+
+public class Main {
+    public static ArrayList<Integer> maxInWindows(int [] num, int size)
+    {
+        if (num.length < size) {
+            return null;
+        }
+        LinkedList<Integer> queue = new LinkedList<>();
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < size; i++) {
+            queue.add(num[i]);
+            max = Math.max(max, num[i]);
+        }
+        ArrayList<Integer> ret = new ArrayList<>();
+        ret.add(max);
+        for (int i = size; i < num.length; i++) {
+            int cur = queue.poll();
+            queue.offer(num[i]);
+            if (cur == max) {
+                max = queue.get(0);
+                for (int j = 1; j < queue.size(); j++) {
+                    max = Math.max(max, queue.get(j));
+                }
+            } else {
+                max = Math.max(max, num[i]);
+            }
+            ret.add(max);
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        int[] arr = {10,14,12,11};
+        
+        maxInWindows(arr, 0);
+    }
+}

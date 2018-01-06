@@ -69,6 +69,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\cmh\Documents\GitHub\crawler4News"/>
 			<item value="E:\workspace2\feature"/>
 			<item value="E:\workspace2\feature\pom.xml"/>
 			<item value="E:\workspace2\mavenTest\target"/>
@@ -84,6 +85,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.dlut.cmh.com.dlut.cmh"/>
 			<item value="com.dlut.cmh.SpringAuto"/>
 			<item value="com.dlut.cmh.sie"/>
 			<item value="com.dlut.cmh.bigsheng"/>
@@ -96,6 +98,7 @@
 			<item value="com.dlut.cmh"/>
 		</list>
 		<list key="artifactId">
+			<item value="com.dlut.cmh"/>
 			<item value="SpringAuto"/>
 			<item value="sie"/>
 			<item value="bigsheng"/>

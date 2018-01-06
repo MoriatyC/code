@@ -1,0 +1,75 @@
+package first_maven;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main{
+
+    public static void combination(String s) {
+        List<String> ret = new ArrayList<>();
+        for (int i = 1; i <= s.length(); i++) {
+            combination(s, i, ret);
+        }
+    }
+    public static void combination(String s, int m, List<String> result) {//从字符串中找长度为m的组合
+        
+        // 如果m==0，则递归结束。输出当前结果  
+        if (m == 0) {  
+            for (int i = 0; i < result.size(); i++) {  
+                System.out.print(result.get(i));  
+            }  
+            System.out.println();  
+            return;  
+        }  
+  
+        if (s.length() != 0) {  
+            // 选择当前元素  
+            result.add(s.charAt(0) + "");  
+            combination(s.substring(1, s.length()), m - 1, result);  
+            result.remove(result.size() - 1);//注意：递归出栈时需要移除List中的字符组合  
+            // 不选当前元素  
+            combination(s.substring(1, s.length()), m, result);  
+        }  
+    }
+    public void mergeSort(int[] nums, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int mid = left + (right - left) / 2;
+        mergeSort(nums, left, mid);
+        mergeSort(nums, mid + 1, right);
+        merge(nums, left, mid + 1, right);
+    }
+    public void merge(int[] a, int left, int start, int right) {
+        int[] b = new int[a.length];
+        int s1 = left;
+        int index = 0;
+        int leftEnd = start;
+        while (left < leftEnd && start <= right) {
+            if (a[left] < a[start]) {
+                    b[index++] = a[left++];
+            } else {
+                    b[index++] = a[start++];
+            }
+        }
+        while (left < leftEnd) {
+                b[index] = a[left++];
+        }
+        while (start <= right) {
+                b[index] = a[start++];
+        }
+        index = 0;
+        for (int i = s1; i <= right; i++) {
+            a[i] = b[index++];
+        }
+    }
+    public static void main(String[] args) throws ParseException {
+    }
+}

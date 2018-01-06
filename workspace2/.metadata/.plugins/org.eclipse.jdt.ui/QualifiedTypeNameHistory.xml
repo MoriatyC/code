@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.nio.file.Path"/>
-<fullyQualifiedTypeName name="java.net.URI"/>
-<fullyQualifiedTypeName name="java.nio.charset.StandardCharsets"/>
-<fullyQualifiedTypeName name="java.nio.file.attribute.BasicFileAttributes"/>
-<fullyQualifiedTypeName name="java.nio.file.FileVisitResult"/>
-<fullyQualifiedTypeName name="java.nio.file.SimpleFileVisitor"/>
 <fullyQualifiedTypeName name="java.nio.file.FileVisitor"/>
 <fullyQualifiedTypeName name="java.nio.file.DirectoryStream"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -52,7 +46,6 @@
 <fullyQualifiedTypeName name="org.apache.commons.lang3.ArrayUtils"/>
 <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
-<fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="org.springframework.context.support.ResourceBundleMessageSource"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
+<fullyQualifiedTypeName name="us.codecraft.webmagic.processor.PageProcessor"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+<fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.core.type.TypeReference"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="model.News"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
 </qualifiedTypeNameHistroy>

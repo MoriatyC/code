@@ -1,0 +1,19 @@
+package first_maven;
+
+import java.util.Arrays;
+
+
+public class Main {
+    static void hello(Object o) {
+        System.out.println("o");
+    }
+
+    static void hello(String a) {
+        System.out.println("S");
+    }
+    
+
+    public static void main(String[] args)     {
+        hello(null);
+    }
+}

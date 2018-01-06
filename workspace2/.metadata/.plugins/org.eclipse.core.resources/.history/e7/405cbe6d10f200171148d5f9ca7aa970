@@ -1,0 +1,8 @@
+package threadpractice;
+
+public class ThreadDemo {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> System.out.println("In Java8!"));
+        t.start();
+    }
+}
