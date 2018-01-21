@@ -135,42 +135,55 @@ public class Main {
         
     }
     public static void quickSort(int[] arr, int left, int right) {
-        if (arr == null || arr.length <= 1) {
-            return;
-        }
         if (left >= right) {
             return;
         }
-        Random random = new Random();
-        int pivot = left + random.nextInt(right - left + 1);
-        partion(arr, left, right, pivot);
-        quickSort(arr, left, pivot - 1);
+        int pivot = partition(arr, left, right);
+        quickSort(arr,left, pivot - 1);
         quickSort(arr, pivot + 1, right);
     }
-    public static void partion(int[] arr, int left, int right, int pivot) {
-        int num = arr[pivot];
-        swap(arr, pivot, left);
+    static  int r(int left, int right) {
+        Random r = new Random();
+        return r.nextInt(right - left + 1) +left;
+    }
+    public static int partition(int[] arr, int left, int right) {
+        int random = r(left, right);
+        swap(arr, left, random);
+        int key = arr[left];
         while (left < right) {
-            while (left < right && arr[right] >= arr[pivot]) {
+            while (left < right && arr[right] >= key) {
                 right--;
             }
-            arr[right] = arr[left];
-//            swap(arr, left, right);
-            while (left < right && arr[left] <= arr[pivot]) {
+            arr[left] = arr[right];
+            while (left < right && arr[left] < key) {
                 left++;
             }
-            arr[left] = arr[right];
-//            swap(arr, left, right);
+            arr[right] = arr[left];
         }
-        arr[left] = num;
+        arr[left] = key;
+        return left;
+    }
+    public static int partition2(int[] arr, int left, int right) {
+        int random = r(left, right);
+        swap(arr, random, right);
+        int small = left - 1;
+        for (int i = left; i < right; i++) {
+            if (arr[i] < arr[right]) {
+                swap(arr, ++small, i);
+            }
+        }
+        swap(arr, ++small, right);
+        return small;
     }
     public static void main(String[] args) {
-        int[] arr = {5,4,7,8,92,3,5,12,6,7,4,2,34,22};
+//        int[] arr = {5,4,7,8,92,3,5,12,6,7,4,2,34,22};
+      int[] arr = {3,5,32,54,65,3,53,87,4,31};
+//        int[] arr = {1,2,3,4,2};
         quickSort(arr, 0, arr.length - 1);
         for(int i: arr) {
             System.out.print(i + "  ");
         }
         System.out.println();
-        System.out.println("2  3  4  4  5  5  6  7  7  8  12  22  34  92  ");
+//        System.out.println("2  3  4  4  5  5  6  7  7  8  12  22  34  92  ");
     }
 }
