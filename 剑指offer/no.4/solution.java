@@ -14,10 +14,10 @@ public class Main {
                 countBank++;
             }
         }
-        int newLength = length + 2  countBank;
+        int newLength = length + 2 * countBank;
         length--;
         newLength--;
-        while (length =0 && length != newLength) {
+        while (length >= 0 && length != newLength) {
             if (string[length] != ' ') {
                 string[newLength--] = string[length--];
             } else {
