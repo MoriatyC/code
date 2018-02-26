@@ -1,0 +1,13 @@
+package first_maven;
+
+public class Main {
+    public static void main(String[] args) {
+        StringBuilder dp = new StringBuilder();
+        StringBuilder dp2 = new StringBuilder(dp);
+        String s = "'";
+        char[] a = {'1'};
+        int a = Integer.valueOf(a);
+     
+        
+    }
+}

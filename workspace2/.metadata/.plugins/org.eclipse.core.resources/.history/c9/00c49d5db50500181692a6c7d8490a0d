@@ -1,0 +1,9 @@
+package concurrentdemo;
+/** 
+* @author 作者 E-mail: 
+* @version 创建时间：2018年1月30日 下午7:49:10 
+* 类说明 
+*/
+public class Philosopher {
+
+}

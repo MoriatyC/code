@@ -1,0 +1,9 @@
+package concurrentdemo;
+/** 
+* @author : Menghui Chen 
+* @version ：2018年1月30日 下午8:03:06 
+* @Description:
+*/
+public class Philosopher {
+
+}

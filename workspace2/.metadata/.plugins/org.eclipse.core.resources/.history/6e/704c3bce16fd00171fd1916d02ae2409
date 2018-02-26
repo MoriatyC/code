@@ -1,0 +1,18 @@
+package first_maven;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
+
+public class Main {
+    private final ConcurrentMap<String, Integer> map;
+    public Main(String s, Integer i) {
+        Map<String, Integer> tmp = new HashMap<>();
+        tmp.put(s, i);
+        map = new ConcurrentMap<String, Integer>(map);
+        
+    }
+
+    public static void main(String[] args) {
+    }
+}

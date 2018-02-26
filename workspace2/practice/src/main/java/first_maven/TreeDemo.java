@@ -12,94 +12,43 @@ class TreeNode {
  }
 
 public class TreeDemo {
-    String Serialize(TreeNode root) {
-        StringBuilder sb = new StringBuilder();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> ret = new ArrayList<>();
         if (root == null) {
-            return sb.toString();
-        }
+            return ret;
+        }    
         LinkedList<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        TreeNode cur;
         while (!queue.isEmpty()) {
-            cur = queue.poll();
-            if (cur == null) {
-                sb.append("null,");
-            } else {
-                sb.append(cur.val).append(",");
-                if (cur.left != null || cur.right != null) {
-                    if (cur.left != null) {
-                        queue.offer(cur.left);
-                    } else {
-                        queue.offer(null);
-                    }
-                    if (cur.right != null) {
-                        queue.offer(cur.right);
-                    } else {
-                        queue.offer(null);
-                    }
+            int size = queue.size();
+            List<Integer> cur = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                cur.add(node.val);
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
                 }
             }
-            
+            ret.add(cur);
         }
-        return sb.toString();
-  }
-    TreeNode Deserialize(String str) {
-        String[] arr = str.split(",");
-        TreeNode root = null;
-        if (arr[0] == "") {
-            return root;
-        }
-        TreeNode[] tarr = new TreeNode[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].equals("null")) {
-                tarr[i] = null;
-            } else {
-                tarr[i] = new TreeNode(Integer.valueOf(arr[i]));
-            }
-        }
-        int tindex = 0;
-        int index = 1;
-        TreeNode cur;
-        while (true) {
-            if (index == arr.length) {
-                break;
-            }
-            while (tarr[tindex] == null) {
-                tindex++;
-                if (tindex == arr.length) {
-                    break;
-                }
-            }
-            cur = tarr[tindex];
-            cur.left = tarr[index++];
-            if (index == arr.length) {
-                break;
-            }
-            cur.right = tarr[index++];
-            tindex++;
-        }
-        return root;
-  }
+        return ret;
+    }
     public static void main(String[] args) {
-        TreeNode[] arr = new TreeNode[10];
-        System.out.println(arr[0] == null);
-        int[] a = new int[10];
-        System.out.println(a[4]);
-//        TreeNode a1 = new TreeNode(5);
-//        TreeNode a2 = new TreeNode(4);
-//        TreeNode a3 = null;
-//        TreeNode a4 = new TreeNode(3);
-//        TreeNode a5 = null;
-//        TreeNode a6 = new TreeNode(2);
-//        a1.left = a2;
-//        a1.right = a3;
-//        a2.left = a4;
-//        a2.right = a5;
-//        a4.left = a6;
-//        TreeDemo t = new TreeDemo();
-//       String s = t.Serialize(null);
-//       System.out.println(s);
-//       t.Deserialize(s);
+
+        TreeNode a1 = new TreeNode(3);
+        TreeNode a2 = new TreeNode(9);
+        TreeNode a3 = new TreeNode(20);
+        TreeNode a4 = new TreeNode(15);
+        TreeNode a5 = new TreeNode(7);
+        a1.left = a2;
+        a1.right = a3;
+        a3.left = a4;
+        a3.right = a5;
+        TreeDemo t = new TreeDemo();
+        t.levelOrder(a1);
     }
 
 }

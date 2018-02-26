@@ -1,0 +1,19 @@
+package first_maven;
+
+public class Main  {
+    public static int f(int x) {
+        int ret = 0;
+        int factor = 2;
+        int cur = 1;
+        while (factor <= x) {
+            ret += cur;
+            factor *= 2;
+            cur++;
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        System.out.println(f(5));
+       System.out.println(Integer.toBinaryString(120));
+    }
+}

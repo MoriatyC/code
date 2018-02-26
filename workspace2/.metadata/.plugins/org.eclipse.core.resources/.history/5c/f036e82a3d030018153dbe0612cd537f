@@ -1,0 +1,36 @@
+package redis;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.SortingParams;
+import redis.clients.jedis.Transaction;
+
+public class RedisJava extends Thread{
+   
+    public static void main(String[] args) {
+        Jedis conn = new Jedis("localhost");
+        Runnable r = new Runnable(){
+            @Override
+            public void run() {
+                Transaction t = conn.multi();
+                t.incr("notrans:");
+                System.out.println(t.get("notrans"));
+                try {
+                    Thread.sleep(1L);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                t.incrBy("notrans:", -1);
+                t.exec();
+            }
+
+        };
+        Thread t1 = new Thread(r);
+//        Thread t2 = new Thread(r);
+//        Thread t3 = new Thread(r);
+        t1.start();
+//        t2.start();
+//        t3.start();
+
+    }
+}

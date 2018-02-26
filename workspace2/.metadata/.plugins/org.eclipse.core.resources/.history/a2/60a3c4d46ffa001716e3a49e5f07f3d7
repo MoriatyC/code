@@ -1,0 +1,41 @@
+package first_maven;
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] v = new int[n];
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < n; i++) {
+            v[i] = sc.nextInt();
+            min = Math.min(min, v[i]);
+            max = Math.max(max, v[i]);
+        }
+        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        for (int i: v) {
+            if (max - i < i - min) {
+                list1.add(i);
+            } else {
+                list2.add(i);
+            }
+        }
+        int sum = 0;
+        for (int i = 0; i < list1.size(); i++) {
+            System.out.println("1                  " + list1.get(i));
+        }
+        for (int i = 0; i< list2.size(); i++) {
+            System.out.println("2                  " + list2.get(i));
+        }
+        for (int i = 1; i < list1.size(); i++) {
+            sum += Math.abs(list1.get(i) - list1.get(i - 1));
+        }
+        for (int i = 1; i< list2.size(); i++) {
+            sum += Math.abs(list2.get(i) - list2.get(i - 1));
+        }
+        System.out.println(sum);
+        sc.close();
+    }
+}

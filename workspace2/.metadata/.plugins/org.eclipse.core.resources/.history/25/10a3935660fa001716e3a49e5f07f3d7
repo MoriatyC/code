@@ -1,0 +1,15 @@
+package first_maven;
+
+public class Main {
+    public static void main(String[] args) {
+        StringBuilder dp = new StringBuilder();
+        StringBuilder dp2 = new StringBuilder(dp);
+        String s = "'";
+        char[] a = {'1'};
+        float n = 3 / 2;
+        int a1 = Integer.valueOf(new String(a));
+        System.out.format("%.2f", n);
+        System.out.println(n);
+        
+    }
+}

@@ -1,5 +1,7 @@
 package redis;
 
+import java.util.List;
+
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Response;
 import redis.clients.jedis.Transaction;
@@ -27,14 +29,8 @@ public class RedisJava extends Thread{
 
 
     public static void main(String[] args) {
-        Jedis conn = new Jedis("localhost");
-        Thread t1 = new RedisJava();
-        Thread t2 = new RedisJava();
-        Thread t3 = new RedisJava();
-        t1.start();
-        t2.start();
-        t3.start();
-        
+        String s = "1.517745413E9";
+        System.out.println(Long.valueOf(s));
 
     }
 }

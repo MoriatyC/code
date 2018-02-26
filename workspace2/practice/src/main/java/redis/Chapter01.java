@@ -64,7 +64,6 @@ public class Chapter01 {
         conn.hmset(article, articleData);
         conn.zadd("score:", now + VOTE_SCORE, article);
         conn.zadd("time:", now, article);
-
         return articleId;
     }
 

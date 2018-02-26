@@ -1,0 +1,17 @@
+package first_maven;
+
+import java.util.ArrayList;
+import java.util.List;
+public class Main {
+    public static void main(String[] args) {
+        int[][] a = new int[3][];
+        a[0] = new int[10];
+        for (int i = 0; i < 10; i++) {
+            a[0][i] = i;
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(a[0][i]);
+        }
+        ArrayList<Integer>[] color = new ArrayList<>();
+    }
+}

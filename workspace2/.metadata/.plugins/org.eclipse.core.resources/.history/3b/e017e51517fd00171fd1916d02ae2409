@@ -1,0 +1,18 @@
+package first_maven;
+
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
+public class Main {
+    private final ConcurrentMap<String, Integer> map;
+    public Main(String s, Integer i) {
+        map = new ConcurrentHashMap<String, Integer>();
+        map.putIfAbsent(s, i);
+        
+    }
+    public void set(String s, Integer i) {
+        map.replace(s, i);
+    }
+    public static void main(String[] args) {
+    }
+}

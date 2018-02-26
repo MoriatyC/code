@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;designpatterns&apos;&#x0D;&#x0A;- Original project: &apos;designpatterns&apos;&#x0D;&#x0A;- Original element: &apos;designpatterns/src/main/java/com.dlut.cmh.designpatterns&apos;" description="Delete element" element1="/src\/main\/java&lt;com.dlut.cmh.designpatterns" element2="/src\/main\/java&lt;com.dlut.cmh" element3="/src\/main\/java&lt;com.dlut" element4="/src\/main\/java&lt;com" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1515813012957" subPackages="false" version="1.0"/>
+</session>

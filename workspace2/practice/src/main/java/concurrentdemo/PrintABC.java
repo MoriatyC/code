@@ -1,66 +1,98 @@
 package concurrentdemo;
-
-public class PrintABC {
-
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        char[] chars = new char[] {'A', 'B', 'C', 'D'};
-        Mutex mutex = new Mutex(chars);
-        for(int i = 0; i < chars.length; i++) {
-            Thread print = new PrintThread(chars[i], mutex);
-            print.start();
+/**
+ * @author cmh
+ *
+ */
+class PrintService {
+    volatile int flag = 1;
+    public synchronized void printA() {
+        while (true) {
+            
+            if (flag == 1) {
+                System.out.println("A");
+                flag = 2;
+                this.notifyAll();
+            } 
+            try {
+                this.wait();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        
+    }
+    public  synchronized void printB() {
+        while (true) {
+            
+            if (flag == 2) {
+                System.out.println("B");
+                flag = 3;
+                this.notifyAll();
+            } 
+            try {
+                this.wait();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
     }
-}
-
-class PrintThread extends Thread {
-    char ch;
-    Mutex mutex;
-    public PrintThread(char ch, Mutex mutex) {
-        this.ch = ch;
-        this.mutex = mutex;
-    }
-    
-    @Override
-    public void run() {
-        super.run();
-        while(true) {
-            synchronized (mutex) {
-                if(mutex.next() != ch)
-                    try {
-                        mutex.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                else {
-                    try {
-                        Thread.sleep(1 * 1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("\n" + mutex.nextPrint());
-                    mutex.notifyAll();
-                }
+    public synchronized void printC() {
+        while (true) {
+            
+            if (flag == 3) {
+                System.out.println("C");
+                flag = 1;
+                this.notifyAll();
+            } 
+            try {
+                this.wait();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
         }
     }
 }
-
-class Mutex {
-    char[] chars;
-    int i = 0;
-    
-    public Mutex(char[] chars) {
-        this.chars = chars;
+class ThreadA extends Thread{
+    PrintService ps;
+    public ThreadA(PrintService ps) {
+        this.ps = ps;
     }
-    
-    public char next() {
-        return chars[i % chars.length];
+    @Override 
+    public void run() {
+        ps.printA();
     }
-    
-    public char nextPrint() {
-        return chars[i++ % chars.length];
+}
+class ThreadB extends Thread{
+    PrintService ps;
+    public ThreadB(PrintService ps) {
+        this.ps = ps;
+    }
+    @Override 
+    public void run() {
+        ps.printB();
+    }
+}
+class ThreadC extends Thread{
+    PrintService ps;
+    public ThreadC(PrintService ps) {
+        this.ps = ps;
+    }
+    @Override 
+    public void run() {
+        ps.printC();
+    }
+}
+public class PrintABC {
+    public static void main(String[] args) {     
+        PrintService ps = new PrintService();
+        Thread a = new ThreadA(ps);
+        Thread b = new ThreadB(ps);
+        ThreadC c = new ThreadC(ps);
+        a.start();
+        b.start();
+        c.start();
     }
 }

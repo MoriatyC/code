@@ -85,6 +85,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.dlut.cmh.netHard"/>
 			<item value="com.dlut.cmh.com.dlut.cmh"/>
 			<item value="com.dlut.cmh.SpringAuto"/>
 			<item value="com.dlut.cmh.sie"/>
@@ -98,6 +99,7 @@
 			<item value="com.dlut.cmh"/>
 		</list>
 		<list key="artifactId">
+			<item value="netHard"/>
 			<item value="com.dlut.cmh"/>
 			<item value="SpringAuto"/>
 			<item value="sie"/>

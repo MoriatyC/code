@@ -1,0 +1,15 @@
+package first_maven;
+
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+public class Main  {
+    public static void main(String[] args) {
+        String separator = ",";
+        Arrays.asList( "a", "b", "d" ).forEach( 
+            ( String e ) -> System.out.print( e + separator ) );
+    }
+}

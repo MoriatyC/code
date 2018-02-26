@@ -1,0 +1,9 @@
+package first_maven;
+
+public class Main {
+
+    public static void main(String[] args) {
+        long test=012;
+        System.out.println(test);
+    }
+}

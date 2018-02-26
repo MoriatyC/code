@@ -1,0 +1,21 @@
+package first_maven;
+
+public class Main {
+    static double f(double base, int exp) {
+        if (exp == 0) {
+            return 1;
+        }
+        if (exp == 1) {
+            return base;
+        }
+        double ret = f(base, exp >> 1);
+        ret *= ret;
+        if ((exp & 1) == 1) {
+            ret *= base;
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        System.out.println(Runtime.getRuntime().availableProcessors());
+    }
+}

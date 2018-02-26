@@ -1,0 +1,19 @@
+package redis;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.SortingParams;
+
+public class RedisJava extends Thread{
+   
+    public static void main(String[] args) {
+        Jedis conn = new Jedis("localhost");
+        String[] arr = {"23", "15", "110", "7"};
+        SortingParams sp = new SortingParams();
+//        sp.alpha();
+//        sp.desc();
+//        System.out.println(conn.sort("sort-input", sp));
+//        sp.by("d*->field");
+//        sp.get("d*->field");
+        System.out.println(conn.sort("sort-input", sp));
+    }
+}

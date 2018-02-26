@@ -1,0 +1,48 @@
+package redis;
+
+import java.util.Set;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Response;
+import redis.clients.jedis.Transaction;
+
+public class RedisJava extends Thread{
+    static Response<String> ret;
+    Jedis conn = new Jedis("localhost");
+    @Override
+    public void run() {
+        
+        Transaction t = conn.multi();
+//        t.incr("notrans:");
+        t.set("FOO", "BAR");
+        ret = t.get("fool");
+        try {
+            Thread.sleep(1L);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+//        t.incrBy("notrans:", -1);
+        t.exec();
+        String s = ret.get();
+        System.out.println(s);
+    }
+
+
+    public static void main(String[] args) {
+        Jedis conn = new Jedis("localhost");
+        Jedis jedis = new Jedis("localhost");
+        Transaction t = jedis.multi();
+        t.set("fool", "bar"); 
+        Response<String> result1 = t.get("fool");
+
+        t.zadd("foo", 1, "barowitch"); t.zadd("foo", 0, "barinsky"); t.zadd("foo", 0, "barikoviev");
+        Response<Set<String>> sose = t.zrange("foo", 0, -1);   // get the entire sortedset
+        t.exec();                                              // dont forget it
+
+        String foolbar = result1.get();                       // use Response.get() to retrieve things from a Response
+        int soseSize = sose.get().size(); 
+        
+
+    }
+}

@@ -1,0 +1,10 @@
+package first_maven;
+
+public class Main {
+    public static void main(String[] args) {
+        double n = 10 / 3;
+        System.out.format("%.2f", n);
+        System.out.println(10 / 3);
+        
+    }
+}

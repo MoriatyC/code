@@ -1,72 +1,49 @@
-package com.dlut.cmh.practice;
+package first_maven;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Random;
+import java.util.LinkedHashMap;
 
 public class Main {
-    public static int partion(int[] arr, int left, int right) {
-        if (left >= right) {
-            return left;
+    public static  int minNumberInRotateArray(int [] array) {
+        if (array == null || array.length == 0) {
+            return 0;
         }
-        Random random = new Random();
-        int pivot = random.nextInt(right - left + 1) + left;
-        swap(arr, pivot, right);
-        int small = left - 1;
-        for (int i = left; i < right; i++) {
-            if (arr[i] < arr[right]) {
-                small++;
-                if (i != small) {
-                    swap(arr, i, small);
+        int left = 0; 
+        int right = array.length - 1;
+        int mid;
+        while (left < right) {
+            mid = left + (right - left) / 2;
+            if (array[left] < array[right]) {
+                return array[left];
+            }
+            if (array[mid]  > array[left]) {
+                left = mid + 1;
+            } else if (array[mid] < array[left]){
+                if (mid > 1 && array[mid] < array[mid - 1]) {
+                    return array[mid];
                 }
-            }
-        }
-        swap(arr, ++small, right);
-        return small;
-    }
-    public static void swap(int[] arr, int a, int b) {
-        int tmp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = tmp;
-    }
-    public static void solution(int[] arr, int k) {
-        if (arr == null || arr.length == 0 || k <= 0) {
-            return;
-        }
-        PriorityQueue<Integer> pq = new PriorityQueue<>(k, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2 - o1;
-            }
-        });
-        pq.offer(arr[0]);
-        for (int i = 1; i < arr.length; i++) {
-            if (pq.size() < k) {
-                pq.offer(arr[i]);
+                right = mid - 1;
             } else {
-                int top = pq.peek();
-                if (top > arr[i]) {
-                    pq.poll();
-                    pq.offer(arr[i]);
-                }
+                return help(array, left, right);
             }
         }
-        for (int i : pq) {
-            System.out.println(i);
+        return array[left];
+    }
+    public static  int help(int[] arr, int left, int right) {
+        int ret = Integer.MAX_VALUE;
+        for (int i = left; i < right; i++) {
+            ret = Math.min(ret, arr[i]);
         }
+        return ret;
+    }
+    public static int NumberOf1(int n) {
+        int count = 0;
+        while (n != 0) {
+            n &= n - 1;
+            count++;
+        }
+        return count;
     }
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        Collections.sort(list, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                String s1 = o1 + o2;
-                String s2 = o2 + o1;
-                return Integer.valueOf(s2) - Integer.valueOf(s1);
-            }
-        });
+        System.out.println(NumberOf1(3));
     }
 }

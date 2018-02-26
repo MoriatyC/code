@@ -1,0 +1,57 @@
+package redis;
+
+public class RedisJava extends Thread{
+    private volatile int orderNum = 1;  
+    @Override
+    public void run() {
+        this.methodA();
+    }
+    public  void methodA() {  
+        try {  
+            while (orderNum != 1) {  
+                wait();  
+            }  
+            for (int i = 0; i < 2; i++) {  
+                System.out.println("AAAAA");  
+            }  
+            orderNum = 2;  
+            notifyAll();  
+        } catch (InterruptedException e) {  
+            e.printStackTrace();  
+        }  
+    }  
+  
+    public  void methodB() {  
+        try {  
+            while (orderNum != 2) {  
+                wait();  
+            }  
+            for (int i = 0; i < 2; i++) {  
+                System.out.println("BBBBB");  
+            }  
+            orderNum = 3;  
+            notifyAll();  
+        } catch (InterruptedException e) {  
+            e.printStackTrace();  
+        }  
+    }  
+  
+    public  void methodC() {  
+        try {  
+            while (orderNum != 3) {  
+                wait();  
+            }  
+            for (int i = 0; i < 2; i++) {  
+                System.out.println("CCCCC");  
+            }  
+            orderNum = 1;  
+            notifyAll();  
+        } catch (InterruptedException e) {  
+            e.printStackTrace();  
+        }  
+    }  
+    public static void main(String[] args) {
+        RedisJava dbtools = new RedisJava();
+        
+    }
+}

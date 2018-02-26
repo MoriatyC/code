@@ -1,0 +1,9 @@
+package first_maven;
+/** 
+* @author : Menghui Chen 
+* @version ：2018年2月2日 上午10:42:22 
+* @Description:
+*/
+public class Sl4j {
+
+}

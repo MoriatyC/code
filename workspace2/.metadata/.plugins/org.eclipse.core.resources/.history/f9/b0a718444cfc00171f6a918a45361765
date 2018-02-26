@@ -1,0 +1,12 @@
+package first_maven;
+
+class a {
+    int s = 10;
+}
+public class Main  {
+    final a aa = new a();
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.aa = new a();
+    }
+}

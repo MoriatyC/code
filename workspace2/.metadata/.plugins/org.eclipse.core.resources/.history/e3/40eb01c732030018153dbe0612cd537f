@@ -1,0 +1,15 @@
+package redis;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.SortingParams;
+
+public class RedisJava extends Thread{
+   
+    public static void main(String[] args) {
+        Jedis conn = new Jedis("localhost");
+        String[] arr = {"23", "15", "110", "7"};
+        SortingParams sp = new SortingParams();
+        System.out.println(sp.alpha());
+        System.out.println(conn.sort("sort-input"));
+    }
+}

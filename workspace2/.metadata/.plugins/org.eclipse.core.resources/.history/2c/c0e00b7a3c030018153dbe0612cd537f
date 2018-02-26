@@ -1,0 +1,40 @@
+package redis;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.SortingParams;
+import redis.clients.jedis.Transaction;
+
+public class RedisJava extends Thread{
+   
+    public static void main(String[] args) {
+        Jedis conn = new Jedis("localhost");
+        String[] arr = {"23", "15", "110", "7"};
+        SortingParams sp = new SortingParams();
+//        sp.alpha();
+//        sp.desc();
+//        System.out.println(conn.sort("sort-input", sp));
+//        sp.by("d*->field");
+//        sp.get("d*->field");
+        Thread t1 = new Thread(new Runnable(){
+            @Override
+            public void run() {
+                Transaction t = conn.multi();
+                t.incr("notrans:");
+                try {
+                    Thread.sleep(1L);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                
+            }
+
+        });
+        /**
+         * .......
+         * */
+        
+        System.out.println(conn.sort("sort-input", sp));
+        System.out.println(conn.sort("sort-input", sp.limit(2, 22)));
+    }
+}

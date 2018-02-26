@@ -1,0 +1,27 @@
+package first_maven;
+
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+public class Main implements Runnable{
+    int a, b;
+    public Main(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    @Override
+    public void run() {
+        double ret = a / b;//如果这里写1.0 * a就不会报错而是输出Infinity
+        System.out.println(ret);
+    }
+    
+    public static void main(String[] args) {
+//        ThreadPoolExecutor pools = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 0L, TimeUnit.SECONDS, 
+//                new SynchronousQueue<Runnable>());
+//        for (int i = 0; i < 5; i++) {
+//            pools.submit(new Main(100, i));
+//        }
+        System.out.println(1.0 / 0);
+    }
+}

@@ -1,0 +1,9 @@
+package first_maven;
+
+import java.util.concurrent.BlockingQueue;
+public class Main {
+    public static void main(String[] args) {
+        BlockingQueue<Integer> bl = new BlockingQueue<E>() {
+        };
+    }
+}

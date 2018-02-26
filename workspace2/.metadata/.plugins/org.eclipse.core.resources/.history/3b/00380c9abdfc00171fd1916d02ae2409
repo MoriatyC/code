@@ -1,0 +1,15 @@
+package first_maven;
+
+public class Main  {
+    public static int f(int x) {
+        int ret = 0;
+        while (x != Integer.MIN_VALUE + 1) {
+            x |= x + 1;
+            ret++;
+        }
+        return ret + 1;
+    }
+    public static void main(String[] args) {
+       System.out.println(f(1));
+    }
+}

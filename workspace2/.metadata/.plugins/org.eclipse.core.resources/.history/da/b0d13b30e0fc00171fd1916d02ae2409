@@ -1,0 +1,16 @@
+package first_maven;
+
+public class Main  {
+    public static int f(int x) {
+        int ret = 0;
+        while (x > 0) {
+            ret += x / 2;
+            x /= 2;
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        System.out.println(f(5));
+       System.out.println(Integer.toBinaryString(120));
+    }
+}

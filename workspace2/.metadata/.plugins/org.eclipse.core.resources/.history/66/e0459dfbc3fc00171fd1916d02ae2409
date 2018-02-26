@@ -1,0 +1,17 @@
+package first_maven;
+
+public class Main  {
+    public static int f(int x) {
+        int ret = 0;
+        while (x + 1 != 0) {
+            
+            x |= x + 1;
+            ret++;
+            System.out.println(x);
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+       System.out.println(1*2*3*4*5);
+    }
+}
