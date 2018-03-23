@@ -12,22 +12,12 @@ public class TreeNode {
 }
 */
 public class Solution {
-    static int ret = 0;
     public int TreeDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        int[] ret = {0};
-        dfs(root, ret, 0);
-        return ret[0];
-    }
-    public void dfs(TreeNode root, int[] ret, int deep) {
-        if (root == null) {
-            ret[0] = Math.max(ret[0], deep);
-            return;
-        }
-        deep++;
-        dfs(root.left, ret, deep);
-        dfs(root.right, ret, deep);
+        int left = TreeDepth(root.left);
+        int right = TreeDepth(root.right);
+        return left > right ? left + 1 : right + 1;
     }
 }
