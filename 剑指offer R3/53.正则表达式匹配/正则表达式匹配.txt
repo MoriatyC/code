@@ -1,0 +1,33 @@
+public class Solution {
+    public boolean match(char[] str, char[] pattern)
+    {
+        if (str == null || pattern == null) {
+            return false;
+        }
+        return helper(str, 0, pattern, 0);
+    }
+    public boolean helper(char[] str, int s1, char[] pattern, int s2) {
+        if (s2 == pattern.length && s1 == str.length) {
+            return true;
+        }
+        if (s2 == pattern.length && s1 < str.length) {
+            return false;
+        }
+        if (s2 < pattern.length - 1 && pattern[s2 + 1] == '*') {
+            if (s1 == str.length) {
+                return helper(str, s1, pattern, s2 + 2);
+            }
+            if (pattern[s2] == '.' || pattern[s2] == str[s1]) {
+                return helper(str, s1, pattern, s2 + 2) || helper(str, s1 + 1, pattern, s2) || helper(str, s1 + 1, pattern, s2 + 2);
+            }
+            return helper(str, s1, pattern, s2 + 2);
+        }
+        if (s1 < str.length) {
+            if (pattern[s2] == '.' || pattern[s2] == str[s1]) {
+                return helper(str, s1 + 1, pattern, s2 + 1);
+            }
+        }
+        return false;
+    }
+}
+    
