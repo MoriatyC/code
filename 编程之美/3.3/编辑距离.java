@@ -3,7 +3,7 @@ public class Main {
          public static String calculateStringDistance(String a, String b) {
          int len1 = a.length();
          int len2 = b.length();
-         int[][] dp = new int[len1 + 1][len2 + 2];//dp[i][j]字符串a的长度是i字符串b的长度是b，他们的相似度
+         int[][] dp = new int[len1 + 1][len2 + 1];//dp[i][j]字符串a的长度是i字符串b的长度是j，他们的相似度
          for (int i = 1; i <= len1; i++) {
              dp[i][0] = i;
          }
